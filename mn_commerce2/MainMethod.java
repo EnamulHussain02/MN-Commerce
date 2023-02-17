@@ -5,6 +5,7 @@ public class MainMethod
 {
 	public static void main(String[] args) 
 	{
+		System.out.println("your genius enamul but wait for the moments");
 		Scanner sc=new Scanner(System.in);
 		Table1 t1=new Table1(); 
 		Table2 t2=new Table2(); 
