@@ -7,6 +7,7 @@ public class CustomerDetails implements Executable
 {
 	public void viewTable() throws SQLException 
 	{
+		System.out.println("sivanath");
 		String query = null;
 		Connection con=MainClass.getConnection();
 		try (Statement stmt = con.createStatement()) 
