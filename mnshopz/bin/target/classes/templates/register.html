@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+	integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+	crossorigin="anonymous">
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+	crossorigin="anonymous"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.content {
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+}
+
+.header1 {
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 3px 6px #03433b39;
+	opacity: 1;
+	position: fixed;
+	z-index: 30;
+}
+
+#image1 {
+	width: 184px;
+	position: absolute;
+	height: 100px;
+	left: 258px;
+	border: 2px solid #03433B;
+	opacity: 1;
+}
+
+.rightHeader {
+	display: flex;
+	margin-right: 0px;
+}
+
+.headerIcon1 {
+	position: absolute;
+	top: 39px;
+	left: 892px;
+	width: 52px;
+	height: 22px;
+}
+
+.headerIcon2 {
+	position: absolute;
+	top: 39px;
+	left: 1017px;
+	width: 79px;
+	height: 22px;
+}
+
+.headerIcon3 {
+	position: absolute;
+	top: 39px;
+	left: 1169px;
+	width: 119px;
+	height: 22px;
+}
+
+.headerIcon4 {
+	position: absolute;
+	top: 39px;
+	left: 1360px;
+	width: 87px;
+	height: 22px;
+}
+
+.headerIcon5 {
+	position: absolute;
+	top: 25px;
+	left: 1496px;
+	right: 223px;
+	width: 201px;
+	height: 50px;
+	border: none;
+	border: 25px;
+}
+
+#button1 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button2 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button3 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button4 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button5 {
+	border-radius: 25px;
+	background-color: #03433B;
+	left: 1532px;
+	top: 39px;
+	width: 201px;
+	height: 50px;
+	font-size: 20px;
+	font-family: Arial;
+	color: #FFFFFF;
+}
+
+.boxLeft {
+	position: relative;
+	top: 208px;
+	left: 259px;
+	width: 720px;
+	height: 665px;
+	background-color: #BEDBD7;
+	opacity: 1;
+}
+
+.boxRight {
+	position: absolute;
+	top: 208px;
+	left: 978px;
+	width: 719px;
+	height: 665px;
+	background-color: #BEDBD7;
+	opacity: 1;
+}
+
+.content1Text {
+	position: relative;
+	top: 119px;
+	left: 136px;
+	width: 466px;
+	height: 95px;
+	font-size: 30px;
+	font-family: Arial;
+	color: #03433B;
+	}
+
+.content1Button {
+	position: absolute;
+	top: 224px;
+	left: 136px;
+	width: 137px;
+	height: 40px;
+	border: none;
+	border-radius: 20px;
+	background-color: #03433B;
+}
+
+#butn1 {
+	position: absolute;
+	border: none;
+	top: 8px;
+	left: 40px;
+	background: none;
+	font-size: 16px;
+	font-family: Arial;
+	color: #FFFFFF;
+}
+
+#img1 {
+	position: absolute;
+	top: 317px;
+	left: 136px;
+	width: 222px;
+	height: 189px;
+}
+
+#img2 {
+	position: absolute;
+	top: 299px;
+	left: 298px;
+	width: 216px;
+	height: 224px;
+}
+
+#img3 {
+	position: absolute;
+	top: 317px;
+	left: 460px;
+	width: 216px;
+	height: 189px;
+}
+.rightText{
+	position: relative;
+	top: 64px;
+	left: 300px;
+	width: 120px;
+	height: 33px;
+	font-family: Arial;
+	font-size: 30px;
+	color: #03433B;
+}
+#nameTxt{
+	position: absolute;
+	top: 138px;
+	left: 134px;
+	font-family: Arial;
+	font-size: 16px;
+	color: #03433B;
+	text-align: left;
+	letter-spacing: 0px;
+	opacity: 1;
+}
+#userName{
+	position: absolute;
+	top: 165px;
+	left: 134px;
+	width: 451px;
+	height: 50px;
+	background: #FFFFFF;
+	border: 0.5px solid;
+	border-color: #03433B;
+	opacity: 1;
+}
+#numberText{
+	position: absolute;
+	top: 235px;
+	left: 134px;
+	font-family: Arial;
+	font-size: 16px;
+	color: #03433B;
+	text-align: left;
+	letter-spacing: 0px;
+	opacity: 1;
+}
+#number{
+	position: absolute;
+	top: 262px;
+	left: 134px;
+	width: 451px;
+	height: 50px;
+	background: #FFFFFF;
+	border: 0.5px solid;
+	border-color: #03433B;
+	opacity: 1;
+}
+#passwordTxt{
+	position: absolute;
+	top: 332px;
+	left: 134px;
+	font-family: Arial;
+	font-size: 16px;
+	color: #03433B;
+	text-align: left;
+	letter-spacing: 0px;
+	opacity: 1;
+}
+#password{
+	position: absolute;
+	top: 359px;
+	left: 134px;
+	width: 451px;
+	height: 50px;
+	background: #FFFFFF;
+	border: 0.5px solid;
+	border-color: #03433B;
+	opacity: 1;
+}
+#addressTxt{
+	position: absolute;
+	top: 429px;
+	left: 134px;
+	font-family: Arial;
+	font-size: 16px;
+	color: #03433B;
+	text-align: left;
+	letter-spacing: 0px;
+	opacity: 1;
+}
+#address{
+	position: absolute;
+	top: 456px;
+	left: 134px;
+	width: 451px;
+	height: 50px;
+	background: #FFFFFF;
+	border: 0.5px solid;
+	border-color: #03433B;
+	opacity: 1;
+}
+#registerBtn{
+	position: absolute;
+	top:515px;
+	left: 134px;
+	width: 451px;
+	height: 50px;
+	font-size: 16px;
+	font-family: arial;
+	color: #FFFFFF;
+	background-color: #03433B;
+	border: 0.5px solid;
+	border-color: #03433B;
+	border-radius: 25px;
+	opacity: 1;
+}
+.rightTxt2{
+	position: absolute;
+	top: 585px;
+	left: 246px; 
+	font-family: arial;
+	font-size: 16px;
+	color: #4A4A4A;
+}
+.rightTxt2 a{
+	text-align: left;
+	text-decoration: underline;
+	letter-spacing: 0px;
+	color: #5895B3;
+}
+</style>
+</head>
+<body>
+	<div class="content">
+		<div class="header1">
+			<img id="image1"
+				src="https://storage.googleapis.com/smco-web-static-assets/TraineeProject/MNshopzz_logo.png">
+
+			<div class="headerIcon1">
+				<a href="">
+					<button id="button1">About</button>
+				</a>
+			</div>
+			<div class="headerIcon2">
+				<a href="">
+					<button id="button2">Products</button>
+				</a>
+			</div>
+			<div class="headerIcon3">
+				<a href="">
+					<button id="button3">Order History</button>
+				</a>
+			</div>
+			<div class="headerIcon4">
+				<a href="">
+					<button id="button4">Add New</button>
+				</a>
+			</div>
+			<div class="headerIcon5">
+				<a href="http://localhost:8080/home/registration">
+					<button id="button5">Register/Login</button>
+				</a>
+			</div>
+		</div>
+
+		<div class="boxLeft">
+			<div class="content1Text">
+				<b>Buy Up to 50% off on Selected Laptop's</b>
+			</div>
+			<div class="content1Button">
+				<a href="">
+					<button id="butn1">Buy Now</button>
+				</a>
+			</div>
+			<div class="content1Images">
+				<a href=""> <img id="img1"
+					src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.puzai_D4808Fi7vlZTj3dQHaFh%26pid%3DApi&f=1&ipt=3adce400abf989bade10e9dc6f9dc472594cbd8be832e9022ef723d84a2de0c9&ipo=images">
+				</a> <a href=""> <img id="img3"
+					src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Ckn6UIV7WjS7_0xMrK6XZwHaGS%26pid%3DApi&f=1&ipt=104439d6c3de5c4db036a21d51702cddbef3d78bd9a18c330942c498efc1d26c&ipo=images">
+				</a> <a href=""> <img id="img2"
+					src="https://i.huffpost.com/gen/1105939/images/o-BEST-PERFORMING-WINDOWS-LAPTOP-facebook.jpg">
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="boxRight">
+		<div class="rightText">
+			<b>Register</b>
+		</div>
+		<div class="textBoxes">
+			<form class="registration">
+				<p id="nameTxt"><b>User Name</b></p>
+				<input type="text" id="userName">
+				<p id="numberText"><b>Mobile Number</b></p>
+				<input type="text" id="number">
+				<p id="passwordTxt"> <b>Password</b> </p>
+				<input type="text" id="password">
+				<p id="addressTxt"><b>Address</b></p>
+				<input type="text" id="address">
+				
+				<input type="submit" id="registerBtn" value="Register"> 
+			</form>
+			<div class="rightTxt2">
+				<b>Already I have an account!</b> 
+				<a href="http://localhost:8080/home/login">
+					Login
+				</a>
+			</div>
+			
+		</div>
+	</div>
+
+
+</body>
+</html>
