@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+	integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+	crossorigin="anonymous">
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+	crossorigin="anonymous"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<style type="text/css">
+.content {
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+}
+
+.header1 {
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 3px 6px #03433b39;
+	opacity: 1;
+	position: fixed;
+	z-index: 30;
+}
+
+#image1 {
+	width: 184px;
+	position: absolute;
+	height: 100px;
+	left: 258px;
+	border: 2px solid #03433B;
+	opacity: 1;
+}
+
+.rightHeader {
+	display: flex;
+	margin-right: 0px;
+}
+
+.headerIcon1 {
+	position: absolute;
+	top: 39px;
+	left: 892px;
+	width: 52px;
+	height: 22px;
+}
+
+.headerIcon2 {
+	position: absolute;
+	top: 39px;
+	left: 1017px;
+	width: 79px;
+	height: 22px;
+}
+
+.headerIcon3 {
+	position: absolute;
+	top: 39px;
+	left: 1169px;
+	width: 131px;
+	height: 22px;
+}
+
+.headerIcon4 {
+	position: absolute;
+	top: 39px;
+	left: 1360px;
+	width: 95px;
+	height: 22px;
+}
+
+.headerIcon5 {
+	position: absolute;
+	top: 25px;
+	left: 1496px;
+	right: 223px;
+	width: 201px;
+	height: 50px;
+	border: none;
+	border: 25px;
+}
+
+#button1 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button2 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button3 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button4 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button5 {
+	border-radius: 25px;
+	background-color: #03433B;
+	left: 1532px;
+	top: 39px;
+	width: 201px;
+	height: 50px;
+	font-size: 20px;
+	font-family: Arial;
+	color: #FFFFFF;
+}
+
+.leftBox {
+	position: absolute;
+	top: 208px;
+	left: 259px;
+	width: 719px;
+	height: 665px;
+	background-color: #BEDBD7;
+}
+
+.leftText {
+	position: absolute;
+	top: 148px;
+	left: 294px;
+	width: 82px;
+	height: 33px;
+	font-family: arial;
+	font-size: 30px;
+	text-align: left;
+	letter-spacing: 0px;
+	color: #03433B;
+	opacity: 1;
+}
+
+#number {
+	position: absolute;
+	top: 226px;
+	left: 133px;
+	width: 116px;
+	height: 17px;
+	font-family: arial;
+	font-size: 16px;
+	text-align: left;
+	letter-spacing: 0px;
+	color: #03433B;
+	opacity: 1;
+	width: 116px;
+}
+
+#numberField {
+	position: absolute;
+	top: 253px;
+	left: 133px;
+	width: 451px;
+	height: 50px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 0.5px solid;
+	border-color: #03433B;
+	opacity: 1;
+}
+
+#password {
+	position: absolute;
+	top: 323px;
+	left: 133px;
+	width: 76px;
+	height: 17px;
+	font-family: arial;
+	font-size: 16px;
+	text-align: left;
+	letter-spacing: 0px;
+	color: #03433B;
+	opacity: 1;
+}
+
+#passwordField {
+	position: absolute;
+	top: 350px;
+	left: 133px;
+	width: 451px;
+	height: 50px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 0.5px solid;
+	border-color: #03433B;
+	opacity: 1;
+}
+
+#register {
+	position: absolute;
+	top: 429px;
+	left: 133px;
+	width: 451px;
+	height: 50px;
+	color: #FFFFFF;
+	background-color: #03433B;
+	border: 0.5px solid;
+	border-color: #03433B;
+	opacity: 1;
+	border-radius: 25px;
+}
+
+.leftTxt2 {
+	position: absolute;
+	top: 499px;
+	left: 233px;
+	font-family: arial;
+	font-size: 16px;
+	color: #4A4A4A;
+}
+
+.leftTxt2 a {
+	text-align: left;
+	letter-spacing: 0px;
+	color: #5895B3;
+}
+
+.rightBox {
+	position: absolute;
+	top: 208px;
+	left: 976px; width : 720px;
+	height: 665px;
+	background-color: #BEDBD7;
+	opacity: 1;
+	width: 720px;
+}
+
+.content1Text {
+	position: absolute;
+	top: 119px;
+	left: 137px;
+	width: 466px;
+	height: 95px;
+	text-align: left;
+	letter-spacing: NaNpx; 
+	font-family: arial;
+	font-size: 30px;
+	color : #03433B;
+	opacity: 1;
+	color: #03433B;
+}
+#butn1 {
+	position: absolute;
+	border: none;
+	top: 6px;
+	left: 33px;
+	background: none;
+	font-size: 16px;
+	font-family: Arial;
+	color: #FFFFFF;
+}
+
+
+.content1Button {
+	position: absolute;
+	top: 224px;
+	left: 136px;
+	width: 137px;
+	height: 40px;
+	border: none;
+	border-radius: 20px;
+	background-color: #03433B;
+}
+#img1 {
+	position: absolute;
+	top: 317px;
+	left: 137px;
+	width: 222px;
+	height: 189px;
+	border: 1px solid;
+	border-color: #707070;
+	opacity: 1;
+}
+
+#img2 {
+	position: absolute;
+	top: 299px;
+	left: 299px;
+	width: 222px;
+	height: 224px;
+	background: transparent 0% 0% no-repeat padding-box; 
+	opacity: 1;
+	border: 1px solid #707070;
+}
+#img3 {
+	position: absolute;
+	top: 317px;
+	left: 461px;
+	width: 222px;
+	height: 189px;
+	border: 1px solid;
+	border-color: #707070;
+	opacity: 1;
+}
+
+</style>
+</head>
+<body>
+	<div class="content">
+		<div class="header1">
+			<img id="image1"
+				src="https://storage.googleapis.com/smco-web-static-assets/TraineeProject/MNshopzz_logo.png">
+
+			<div class="headerIcon1">
+				<a href="">
+					<button id="button1">About</button>
+				</a>
+			</div>
+			<div class="headerIcon2">
+				<a href="">
+					<button id="button2">Products</button>
+				</a>
+			</div>
+			<div class="headerIcon3">
+				<a href="">
+					<button id="button3">Order History</button>
+				</a>
+			</div>
+			<div class="headerIcon4">
+				<a href="">
+					<button id="button4">Add New</button>
+				</a>
+			</div>
+			<div class="headerIcon5">
+				<a href="http://localhost:8080/home/registration">
+					<button id="button5">Register/Login</button>
+				</a>
+			</div>
+		</div>
+		<div class="leftBox">
+			<div class="leftText">
+				<b>Login</b>
+			</div>
+			<form action="">
+				<p id="number">
+					<b>Mobile Number</b>
+				</p>
+				<input type="text" id="numberField">
+				<p id="password">
+					<b>Password</b>
+				</p>
+				<input type="text" id="passwordField"> <input type="button"
+					id="register" value="Login">
+			</form>
+			<div class="leftTxt2"> 
+				<b>I don’t have an account!</b> <a href="http://localhost:8080/home/registration"> Register </a>
+			</div>
+		</div>
+		<div class="rightBox">
+			<div class="content1Text">
+				<b>Buy Up to 50% off on Selected Laptop's</b>
+			</div>
+			<div class="content1Button">
+				<a href="">
+					<button id="butn1">Buy Now</button>
+				</a>
+			</div>
+			<div class="content1Images">
+				<a href=""> <img id="img1"
+					src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.puzai_D4808Fi7vlZTj3dQHaFh%26pid%3DApi&f=1&ipt=3adce400abf989bade10e9dc6f9dc472594cbd8be832e9022ef723d84a2de0c9&ipo=images">
+				</a> <a href=""> <img id="img3"
+					src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Ckn6UIV7WjS7_0xMrK6XZwHaGS%26pid%3DApi&f=1&ipt=104439d6c3de5c4db036a21d51702cddbef3d78bd9a18c330942c498efc1d26c&ipo=images">
+				</a> <a href=""> <img id="img2"
+					src="https://i.huffpost.com/gen/1105939/images/o-BEST-PERFORMING-WINDOWS-LAPTOP-facebook.jpg">
+				</a>
+			</div>
+
+		</div>
+	</div>
+</body>
