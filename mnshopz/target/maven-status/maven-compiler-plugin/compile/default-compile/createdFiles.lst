@@ -1,8 +1,6 @@
-com\example\mnshopz\repository\CustomerRepository.class
 com\example\mnshopz\controller\CustomerController.class
 com\example\mnshopz\entity\Customer.class
 com\example\mnshopz\service\ProductsServiceImpl.class
 com\example\mnshopz\entity\Products.class
 com\example\mnshopz\repository\ProductsRepository.class
-com\example\mnshopz\service\CustomerServiceImpl.class
 com\example\mnshopz\MnshopzApplication.class

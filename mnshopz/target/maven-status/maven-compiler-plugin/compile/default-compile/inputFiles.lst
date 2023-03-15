@@ -1,9 +1,6 @@
-D:\mnshopz\src\main\java\com\example\mnshopz\repository\ProductsRepository.java
-D:\mnshopz\src\main\java\com\example\mnshopz\service\ClientService.java
-D:\mnshopz\src\main\java\com\example\mnshopz\service\CustomerServiceImpl.java
-D:\mnshopz\src\main\java\com\example\mnshopz\entity\Products.java
-D:\mnshopz\src\main\java\com\example\mnshopz\entity\Customer.java
-D:\mnshopz\src\main\java\com\example\mnshopz\repository\CustomerRepository.java
-D:\mnshopz\src\main\java\com\example\mnshopz\controller\CustomerController.java
-D:\mnshopz\src\main\java\com\example\mnshopz\MnshopzApplication.java
-D:\mnshopz\src\main\java\com\example\mnshopz\service\ProductsServiceImpl.java
+D:\MN-Commerce\mnshopz\src\main\java\com\example\mnshopz\repository\ProductsRepository.java
+D:\MN-Commerce\mnshopz\src\main\java\com\example\mnshopz\service\ProductsServiceImpl.java
+D:\MN-Commerce\mnshopz\src\main\java\com\example\mnshopz\controller\CustomerController.java
+D:\MN-Commerce\mnshopz\src\main\java\com\example\mnshopz\MnshopzApplication.java
+D:\MN-Commerce\mnshopz\src\main\java\com\example\mnshopz\entity\Products.java
+D:\MN-Commerce\mnshopz\src\main\java\com\example\mnshopz\entity\Customer.java

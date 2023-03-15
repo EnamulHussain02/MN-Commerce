@@ -328,6 +328,30 @@
 }
 
 </style>
+<script type="text/javascript">
+$(document).ready(function() {
+	  $('#register').click(function(event) {
+	    event.preventDefault(); // prevent form submission
+
+	    var form = $('#my-form'); // select the form element
+	    var formData = form.serialize(); // get the form data
+	    var jsonData = JSON.stringify(formData); // convert form data to JSON
+
+	    $.ajax({
+	      url: '/api/endpoint', // set the endpoint URL
+	      type: 'POST', // set the request method
+	      data: jsonData, // set the request data
+	      dataType: 'json', // set the expected response data type
+	      success: function(response) {
+	        console.log(response); // handle the response
+	      },
+	      error: function(xhr, status, error) {
+	        console.error(error); // handle the error
+	      }
+	    });
+	  });
+	});
+</script>
 </head>
 <body>
 	<div class="content">
@@ -365,16 +389,18 @@
 			<div class="leftText">
 				<b>Login</b>
 			</div>
-			<form action="">
+			
+		
+			<form action="" id="my-form">
 				<p id="number">
 					<b>Mobile Number</b>
 				</p>
-				<input type="text" id="numberField">
+				<input type="text" id="numberField" required>
 				<p id="password">
 					<b>Password</b>
 				</p>
-				<input type="text" id="passwordField"> <input type="button"
-					id="register" value="Login">
+				<input type="text" id="passwordField" required> 
+				<input type="submit" id="login" value="Login">
 			</form>
 			<div class="leftTxt2"> 
 				<b>I don’t have an account!</b> <a href="http://localhost:8080/home/registration"> Register </a>
