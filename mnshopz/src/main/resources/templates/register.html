@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -20,8 +22,7 @@
 	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
 	crossorigin="anonymous"></script>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 <style>
 * {
 	margin: 0px;
@@ -177,7 +178,7 @@
 	font-size: 30px;
 	font-family: Arial;
 	color: #03433B;
-	}
+}
 
 .content1Button {
 	position: absolute;
@@ -224,7 +225,8 @@
 	width: 216px;
 	height: 189px;
 }
-.rightText{
+
+.rightText {
 	position: relative;
 	top: 64px;
 	left: 300px;
@@ -234,7 +236,8 @@
 	font-size: 30px;
 	color: #03433B;
 }
-#nameTxt{
+
+#nameTxt {
 	position: absolute;
 	top: 138px;
 	left: 134px;
@@ -245,7 +248,8 @@
 	letter-spacing: 0px;
 	opacity: 1;
 }
-#userName{
+
+#userName {
 	position: absolute;
 	top: 165px;
 	left: 134px;
@@ -256,7 +260,8 @@
 	border-color: #03433B;
 	opacity: 1;
 }
-#numberText{
+
+#numberText {
 	position: absolute;
 	top: 235px;
 	left: 134px;
@@ -267,7 +272,8 @@
 	letter-spacing: 0px;
 	opacity: 1;
 }
-#number{
+
+#number {
 	position: absolute;
 	top: 262px;
 	left: 134px;
@@ -278,7 +284,8 @@
 	border-color: #03433B;
 	opacity: 1;
 }
-#passwordTxt{
+
+#passwordTxt {
 	position: absolute;
 	top: 332px;
 	left: 134px;
@@ -289,7 +296,8 @@
 	letter-spacing: 0px;
 	opacity: 1;
 }
-#password{
+
+#password {
 	position: absolute;
 	top: 359px;
 	left: 134px;
@@ -300,7 +308,8 @@
 	border-color: #03433B;
 	opacity: 1;
 }
-#addressTxt{
+
+#addressTxt {
 	position: absolute;
 	top: 429px;
 	left: 134px;
@@ -311,7 +320,8 @@
 	letter-spacing: 0px;
 	opacity: 1;
 }
-#address{
+
+#address {
 	position: absolute;
 	top: 456px;
 	left: 134px;
@@ -322,9 +332,10 @@
 	border-color: #03433B;
 	opacity: 1;
 }
-#registerBtn{
+
+.registerBtn {
 	position: absolute;
-	top:515px;
+	top: 515px;
 	left: 134px;
 	width: 451px;
 	height: 50px;
@@ -337,21 +348,54 @@
 	border-radius: 25px;
 	opacity: 1;
 }
-.rightTxt2{
+
+.rightTxt2 {
 	position: absolute;
 	top: 585px;
-	left: 246px; 
+	left: 246px;
 	font-family: arial;
 	font-size: 16px;
 	color: #4A4A4A;
 }
-.rightTxt2 a{
+
+.rightTxt2 a {
 	text-align: left;
 	text-decoration: underline;
 	letter-spacing: 0px;
 	color: #5895B3;
 }
 </style>
+
+<script>
+	function collect() {
+		debugger;
+		var name = document.getElementById('userName').value;
+		var number = document.getElementById('number').value;
+		var password = document.getElementById('password').value;
+		var address = document.getElementById('address').value;
+
+		var data={
+				"Name":name,
+				"Number":number,
+				"Password":password,
+				"Address":address
+			};
+			console.log(data);
+
+		$.ajax({
+			url : '/home/registration', // set the endpoint URL
+			type : 'POST', // set the request method
+			value : JSON.stringify(data),
+			dataType : 'json', // set the expected response data type
+			success : function(response) {
+				value = response;
+				console.log(value);
+				console.log(data); // handle the response
+			}
+
+		});
+	}
+</script>
 </head>
 <body>
 	<div class="content">
@@ -411,25 +455,30 @@
 			<b>Register</b>
 		</div>
 		<div class="textBoxes">
-			<form class="registration">
-				<p id="nameTxt"><b>User Name</b></p>
-				<input type="text" id="userName">
-				<p id="numberText"><b>Mobile Number</b></p>
-				<input type="text" id="number">
-				<p id="passwordTxt"> <b>Password</b> </p>
-				<input type="text" id="password">
-				<p id="addressTxt"><b>Address</b></p>
-				<input type="text" id="address">
-				
-				<input type="submit" id="registerBtn" value="Register"> 
-			</form>
+
+			<p id="nameTxt">
+				<b>User Name</b>
+			</p>
+			<input type="text" id="userName" required>
+			<p id="numberText">
+				<b>Mobile Number</b>
+			</p>
+			<input type="number" id="number" required>
+			<p id="passwordTxt">
+				<b>Password</b>
+			</p>
+			<input type="password" id="password" required>
+			<p id="addressTxt">
+				<b>Address</b>
+			</p>
+			<input type="text" id="address" required> <input
+				type="button" class="registerBtn" value=Register onclick="collect()">
+
 			<div class="rightTxt2">
-				<b>Already I have an account!</b> 
-				<a href="http://localhost:8080/home/login">
-					Login
-				</a>
+				<b>Already I have an account!</b> <a
+					href="http://localhost:8080/home/login"> Login </a>
 			</div>
-			
+
 		</div>
 	</div>
 

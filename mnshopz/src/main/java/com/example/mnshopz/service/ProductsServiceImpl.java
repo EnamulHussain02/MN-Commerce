@@ -7,6 +7,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -15,28 +16,20 @@ import com.example.mnshopz.repository.ProductsRepository;
 
 
 @Service
-@Component
 public class ProductsServiceImpl{
 
 	@Autowired
-	 private ProductsRepository productsRepository;
+	ProductsRepository productsRepository;
 	
 	private static final Logger logger = LoggerFactory.getLogger(ProductsServiceImpl.class);
 
 	
 	public Map<String, Object> getAllProducts() {
-		Map<String, Object> products=new HashMap<>();
-		try{
-			List<Products> allProducts=productsRepository.findAll();
-		    products.put("Products", allProducts);
-		}catch(Exception e){
-			
-		}
-		return products;
+		Map<String, Object> prod=new HashMap<>();
+		List<Map<String, Object>> allProducts=productsRepository.getProductDetails();
+		    prod.put("Products", allProducts);
+		    return prod;
 	}
 	
-//	public Map<String, Map> get
-
-
 
 }

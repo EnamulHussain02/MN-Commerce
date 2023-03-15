@@ -5,24 +5,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Entity
 @Component
 @Table(name="products")
-
-
-@NamedQuery(name = "Products", query = "SELECT u FROM Products u")
 public class Products {
 	
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="product_Id")
-	private String pId;
+	private Long pId;
 	
 	@Column(name="product_Name")
 	private String pName;
@@ -65,11 +62,11 @@ public class Products {
 				+ p_discount + "]";
 	}
 
-	public String getpId() {
+	public Long getpId() {
 		return pId;
 	}
 
-	public void setpId(String pId) {
+	public void setpId(Long pId) {
 		this.pId = pId;
 	}
 
