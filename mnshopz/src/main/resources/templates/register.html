@@ -367,34 +367,35 @@
 </style>
 
 <script>
-	function collect() {
-		debugger;
-		var name = document.getElementById('userName').value;
-		var number = document.getElementById('number').value;
-		var password = document.getElementById('password').value;
-		var address = document.getElementById('address').value;
+function collect() {
+    var name = document.getElementById('userName').value;
+    var number = document.getElementById('number').value;
+    var password = document.getElementById('password').value;
+    var address = document.getElementById('address').value;
 
-		var data={
-				"Name":name,
-				"Number":number,
-				"Password":password,
-				"Address":address
-			};
-			console.log(data);
+    var data = {
+        "cname": name,
+        "cnumber": number,
+        "cpassowrd": password,
+        "caddress": address
+    };
 
-		$.ajax({
-			url : '/home/registration', // set the endpoint URL
-			type : 'POST', // set the request method
-			value : JSON.stringify(data),
-			dataType : 'json', // set the expected response data type
-			success : function(response) {
-				value = response;
-				console.log(value);
-				console.log(data); // handle the response
-			}
+    console.log(data);
 
-		});
-	}
+    $.ajax({
+        url: '/home/register',
+        headers : {
+			'Content-Type' : 'application/json'
+		},// set the endpoint URL
+        type: 'POST', // set the request method
+        data: JSON.stringify(data), // pass the data in the "data" property
+        dataType: 'json', // set the expected response data type
+        success: function(response) {
+            console.log(response);
+            console.log(data); // handle the response
+        }
+    });
+}
 </script>
 </head>
 <body>
@@ -455,30 +456,31 @@
 			<b>Register</b>
 		</div>
 		<div class="textBoxes">
+			
+				<p id="nameTxt">
+					<b>User Name</b>
+				</p>
+				<input type="text" id="userName" name="c_name"required>
+				<p id="numberText">
+					<b>Mobile Number</b>
+				</p>
+				<input type="number" id="number" name="c_number "required>
+				<p id="passwordTxt">
+					<b>Password</b>
+				</p>
+				<input type="password" id="password" name="c_passowrd"required>
+				
+				<p id="addressTxt">
+					<b>Address</b>
+				</p>
+				<input type="text" id="address" name="c_address"required>
 
-			<p id="nameTxt">
-				<b>User Name</b>
-			</p>
-			<input type="text" id="userName" required>
-			<p id="numberText">
-				<b>Mobile Number</b>
-			</p>
-			<input type="number" id="number" required>
-			<p id="passwordTxt">
-				<b>Password</b>
-			</p>
-			<input type="password" id="password" required>
-			<p id="addressTxt">
-				<b>Address</b>
-			</p>
-			<input type="text" id="address" required> <input
-				type="button" class="registerBtn" value=Register onclick="collect()">
-
+				<button type="submit" class="registerBtn" onclick="collect()">Register</button>
+		
 			<div class="rightTxt2">
 				<b>Already I have an account!</b> <a
 					href="http://localhost:8080/home/login"> Login </a>
 			</div>
-
 		</div>
 	</div>
 

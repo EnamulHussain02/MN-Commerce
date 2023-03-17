@@ -20,51 +20,59 @@ import org.springframework.stereotype.Component;
 public class Customer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long cId;
+	private Long c_id;
 	
-	@Column(name="c_Name")
-	private String cName; 
+	@Column(name="c_address")
+	private String c_address; 
 	
-	@Column(name="c_Number")
-	private long cNumber;
+	@Column(name ="c_name")
+	private String c_name;
 	
-	@Column(name="c_Address")
-	private String cAddress;
+	@Column(name="c_number")
+	private Long c_number; 
 	
-	public Customer()
-	{
-		
+	@Column(name="c_passowrd")
+	private String c_passowrd;
+
+	public Long getC_id() {
+		return c_id;
 	}
-	public Customer(long cId, String cName, long cNumber, String cAddress) {
-		super();
-		this.cId = cId;
-		this.cName = cName;
-		this.cNumber = cNumber;
-		this.cAddress = cAddress;
+
+	public void setC_id(Long c_id) {
+		this.c_id = c_id;
 	}
-	public long getcId() {
-		return cId;
+
+	public String getC_address() {
+		return c_address;
 	}
-	public void setcId(long cId) {
-		this.cId = cId;
+
+	public void setC_address(String c_address) {
+		this.c_address = c_address;
 	}
-	public String getcName() {
-		return cName;
+
+	public String getC_name() {
+		return c_name;
 	}
-	public void setcName(String cName) {
-		this.cName = cName;
+
+	public void setC_name(String c_name) {
+		this.c_name = c_name;
 	}
-	public long getcNumber() {
-		return cNumber;
+
+	public Long getC_number() {
+		return c_number;
 	}
-	public void setcNumber(long cNumber) {
-		this.cNumber = cNumber;
+
+	public void setC_number(Long c_number) {
+		this.c_number = c_number;
 	}
-	public String getcAddress() {
-		return cAddress;
+
+	public String getC_passowrd() {
+		return c_passowrd;
 	}
-	public void setcAddress(String cAddress) {
-		this.cAddress = cAddress;
+
+	public void setC_passowrd(String c_passowrd) {
+		this.c_passowrd = c_passowrd;
 	}
+	
 	
 }
