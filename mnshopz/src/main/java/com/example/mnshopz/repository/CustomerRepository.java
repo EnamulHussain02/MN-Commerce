@@ -1,21 +1,23 @@
 package com.example.mnshopz.repository;
 
+import java.util.Map;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.mnshopz.entity.Customer;
 
-@Repository
-@Component
-public interface CustomerRepository extends CrudRepository<Customer, Long> {
-	@Transactional
+public interface CustomerRepository extends JpaRepository<Customer, Long>
+{
+	@Query(nativeQuery=true, value="select * from customer where c_number=?1")
+	public Map<String, Object> checkCustomer(long number);
+	
 	@Modifying
-	@Query(nativeQuery = true,value="insert into customer values(cname,cnumber,cpassowrd,caddress) ")
-	 public String setCustomerDetails(@Param("cname")String cname, @Param("cnumber")long cnumber,@Param("cpassword")String cpassword,@Param("caddress")String caddress);
+	@Transactional
+	@Query(nativeQuery=true,value="insert into customer( c_address, c_name, c_number, c_password) values(?1,?2,?3,?4)")
+	public void setCustomer(String address,String name, long number, String password);
 
+	
 }

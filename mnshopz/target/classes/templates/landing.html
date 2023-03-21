@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+	integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+	crossorigin="anonymous">
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+	crossorigin="anonymous"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!--<link rel="stylesheet" type="text/css" href="D:\mnshopzz\FrontEnd\mncommercestyle.css">-->
+
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.container1 {
+	width: 100%;
+	height: 2098px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	opacity: 1;
+}
+
+.header1 {
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 3px 6px #03433b39;
+	opacity: 1;
+	position: fixed;
+	z-index: 30;
+}
+
+#image1 {
+	width: 184px;
+	position: absolute;
+	height: 100px;
+	left: 258px;
+	border: 2px solid #03433B;
+	opacity: 1;
+}
+
+.rightHeader {
+	display: flex;
+	margin-right: 0px;
+}
+
+.headerIcon1 {
+	position: absolute;
+	top: 39px;
+	left: 892px;
+	width: 52px;
+	height: 22px;
+}
+
+.headerIcon2 {
+	position: absolute;
+	top: 39px;
+	left: 1017px;
+	width: 79px;
+	height: 22px;
+}
+
+.headerIcon3 {
+	position: absolute;
+	top: 39px;
+	left: 1169px;
+	width: 119px;
+	height: 22px;
+}
+
+.headerIcon4 {
+	position: absolute;
+	top: 39px;
+	left: 1360px;
+	width: 87px;
+	height: 22px;
+}
+
+.headerIcon5 {
+	position: absolute;
+	top: 25px;
+	left: 1496px;
+	right: 223px;
+	width: 201px;
+	height: 50px;
+	border: none;
+	border: 25px;
+}
+
+#button1 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button2 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button3 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button4 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button5 {
+	border-radius: 25px;
+	background-color: #03433B;
+	left: 1532px;
+	top: 39px;
+	width: 201px;
+	height: 50px;
+	font-size: 20px;
+	font-family: Arial;
+	color: #FFFFFF;
+}
+
+.content1 {
+	position: absolute;
+	background-color: #BEDBD7;
+	overflow: hidden;
+	top: 124px;
+	left: 258px;
+	width: 1439px;
+	height: 300px;
+}
+
+.content1Text {
+	position: absolute;
+	top: 77px;
+	left: 134px;
+	bottom: 128px;
+	width: 455px;
+	height: 95px;
+	font-family: Arial;
+	font-size: 30px;
+}
+
+.content1Button {
+	position: absolute;
+	top: 182px;
+	left: 134px;
+	width: 137px;
+	height: 40px;
+	border: none;
+	border-radius: 20px;
+	background-color: #03433B;
+}
+
+#butn1 {
+	position: absolute;
+	border: none;
+	top: 8px;
+	left: 40px;
+	background: none;
+	font-size: 16px;
+	font-family: Arial;
+	color: #FFFFFF;
+}
+
+#img1 {
+	position: absolute;
+	top: 56px;
+	left: 723px;
+	width: 216px;
+	height: 189px;
+}
+
+#img2 {
+	position: absolute;
+	top: 38px;
+	left: 890px;
+	width: 216px;
+	height: 224px;
+}
+
+#img3 {
+	position: absolute;
+	top: 56px;
+	left: 1048px;
+	width: 216px;
+	height: 189px;
+}
+
+.dropdowns {
+	position: absolute;
+	left: 258px;
+	top: 449px;
+	display: flex;
+}
+
+#dropdown1 {
+	width: 203px;
+	height: 45px;
+}
+
+#dropdown2 {
+	width: 109px;
+	height: 45px;
+}
+
+#dropdown3 {
+	width: 104px;
+	height: 45px;
+}
+
+#dropdown4 {
+	width: 111px;
+	height: 45px;
+}
+
+.btn {
+	background: #DCE6E5 0% 0% no-repeat padding-box;
+	border-radius: 50px;
+	font-family: Arial;
+	border: none;
+	color: #000000;
+	opacity: 1;
+}
+
+#dropdown5 {
+	left: 818px;
+	width: 131px;
+	height: 45px;
+}
+
+#dropbtn5 {
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	border: 1px solid #03433B;
+	border-radius: 50px;
+	opacity: 1;
+}
+
+#dropbtn5:hover {
+	color: black;
+	background: none;
+}
+
+.content-text {
+	position: relative;
+	top: 440px;
+	left: 258px;
+	margin-top: 25px;
+	width: 316px;
+	height: 33px;
+}
+
+.content-text h3 {
+	text-align: left;
+	font: normal normal normal 25px/29px Arial;
+	font-size: 25px;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+}
+
+#prodimg {
+	background: transparent 0% 0% no-repeat padding-box;
+	border-radius: 15px;
+	width: 233px;
+	height: 310px;
+	opacity: 1;
+}
+
+#prodName {
+	margin-top: 15px;
+	margin-bottom: -15px;
+	font-family: arial;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+#prodDesc {
+	margin-top: 15px;
+	font-size: 16px;
+	margin-bottom: -15px;
+	cursor: pointer;
+}
+
+.product1 {
+	position: absolute;
+	top: 567px;
+	left: 258px;
+	width: 261px;
+	height: 310px;
+}
+
+.product2 {
+	position: absolute;
+	top: 567px;
+	left: 553px;
+	width: 261px;
+	height: 310px;
+}
+
+.product3 {
+	position: absolute;
+	top: 567px;
+	left: 847px;
+	width: 261px;
+	height: 310px;
+}
+
+.product4 {
+	position: absolute;
+	top: 567px;
+	left: 1142px;
+	width: 261px;
+	height: 310px;
+}
+
+.product5 {
+	position: absolute;
+	top: 567px;
+	left: 1436px;
+	width: 261px;
+	height: 310px;
+}
+
+.product6{
+	position: absolute;
+	top: 1057px;
+	left: 258px;
+	width: 261px;
+	height: 310px;
+}
+
+.product7{
+	position: absolute;
+	top: 1057px;
+	left: 553px;
+	width: 261px;
+	height: 310px;
+}
+
+.product8{
+	position: absolute;
+	top: 1057px;
+	left: 847px;
+	width: 261px;
+	height: 310px;
+}
+
+.product9{
+	position: absolute;
+	top: 1057px;
+	left: 1142px;
+	width: 261px;
+	height: 310px;
+}
+
+.product10{
+	position: absolute;
+	top: 1057px;
+	left: 1436px;
+	width: 261px;
+	height: 310px;
+}
+.star1 {
+	top: 949px;
+	left: 258px;
+	cursor: pointer;
+	width: 123px;
+	height: 19px;
+	margin-top: 15px;
+}
+
+.prodIcon1 {
+	margin-top: 15px;
+}
+
+#prdbtn {
+	width: 137px;
+	height: 40px;
+	background: #03433B 0% 0% no-repeat padding-box;
+	border-radius: 20px;
+	opacity: 1px;
+	color: #FFFFFF;
+	font-family: arial;
+	font-size: 16px;
+}
+
+.prodprice {
+	margin-left: 170px;
+	margin-top: -31px;
+}
+</style>
+<script type="text/javascript">
+
+
+	
+
+	$.ajax({
+	    type : "POST",
+	    headers : {
+	      'Content-Type' : 'application/json'
+	    },
+	    crossDomain : true,
+	    url : "/home/register",
+	    success : function(response) {
+	      
+	    },
+	    error : function() {
+	    }
+	  });
+  
+</script>
+
+<title>Online Ecommerce - MNCommerce</title>
+</head>
+<body>
+	<div class="container1">
+		<div class="header1">
+
+			<!-- <img id="image1"
+				src="https://storage.googleapis.com/smco-web-static-assets/TraineeProject/MNshopzz_logo.png"> -->
+
+			<div class="headerIcon1">
+				<a href="">
+					<button id="button1">About</button>
+				</a>
+			</div>
+			<div class="headerIcon2">
+				<a href="">
+					<button id="button2">Products</button>
+				</a>
+			</div>
+			<div class="headerIcon3">
+				<a href="">
+					<button id="button3">Order History</button>
+				</a>
+			</div>
+			<div class="headerIcon4">
+				<a href="">
+					<button id="button4">Add New</button>
+				</a>
+			</div>
+			<div class="headerIcon5">
+				<a href="http://localhost:8080/home/registration">
+					<button id="button5" onclick=openRegister()>Register/Login</button>
+				</a>
+			</div>
+		</div>
+
+		<div class="content1 ">
+			<div class="content1Text">
+				<b>Buy Upto 50% off on Selected Laptops</b>
+			</div>
+			<div class="content1Button">
+				<a href="">
+					<button id="butn1">Buy Now</button>
+				</a>
+			</div>
+			<div class="content1Images">
+				<a href=""> <img id="img1"
+					src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.puzai_D4808Fi7vlZTj3dQHaFh%26pid%3DApi&f=1&ipt=3adce400abf989bade10e9dc6f9dc472594cbd8be832e9022ef723d84a2de0c9&ipo=images">
+				</a> <a href=""> <img id="img3"
+					src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Ckn6UIV7WjS7_0xMrK6XZwHaGS%26pid%3DApi&f=1&ipt=104439d6c3de5c4db036a21d51702cddbef3d78bd9a18c330942c498efc1d26c&ipo=images">
+				</a> <a href=""> <img id="img2"
+					src="https://i.huffpost.com/gen/1105939/images/o-BEST-PERFORMING-WINDOWS-LAPTOP-facebook.jpg">
+				</a>
+			</div>
+		</div>
+		<div class="dropdowns">
+			<div class="dropdown" id="dropdown1">
+				<button id="dropbtn1" class="btn btn-secondary dropdown-toggle"
+					type="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Select Category</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="#">Mobiles</a></li>
+					<li><a class="dropdown-item" href="#">Computer</a></li>
+					<li><a class="dropdown-item" href="#">TV</a></li>
+					<li><a class="dropdown-item" s href="#">Men's Fashion</a></li>
+					<li><a class="dropdown-item" href="#">Women's Fashion</a></li>
+				</ul>
+			</div>
+			<div class="dropdown" id="dropdown2">
+				<button id="dropbtn2" class="btn btn-secondary dropdown-toggle"
+					type="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Price</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="#">Under <i
+							class="bi bi-currency-rupee"></i>1,000
+					</a></li>
+					<li><a class="dropdown-item" href="#"><i
+							class="bi bi-currency-rupee"></i>1,000-<i
+							class="bi bi-currency-rupee"></i>5,000</a></li>
+					<li><a class="dropdown-item" href="#"><i
+							class="bi bi-currency-rupee"></i>5,000-<i
+							class="bi bi-currency-rupee"></i>10,000</a></li>
+					<li><a class="dropdown-item" href="#"><i
+							class="bi bi-currency-rupee"></i>10,000-<i
+							class="bi bi-currency-rupee"></i>20,000</a></li>
+					<li><a class="dropdown-item" href="#">Over <i
+							class="bi bi-currency-rupee"></i>20,000
+					</a></li>
+				</ul>
+			</div>
+			<div class="dropdown" id="dropdown3">
+				<button id="dropbtn3" class="btn btn-secondary dropdown-toggle"
+					type="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Offer</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="#">10<i
+							class="bi bi-percent"></i> Off or more
+					</a></li>
+					<li><a class="dropdown-item" href="#">20<i
+							class="bi bi-percent"></i> Off or more
+					</a></li>
+					<li><a class="dropdown-item" href="#">30<i
+							class="bi bi-percent"></i> Off or more
+					</a></li>
+					<li><a class="dropdown-item" href="#">40<i
+							class="bi bi-percent"></i> Off or more
+					</a></li>
+					<li><a class="dropdown-item" href="#">50<i
+							class="bi bi-percent"></i> Off or more
+					</a></li>
+				</ul>
+			</div>
+			<div class="dropdown" id="dropdown4">
+				<button id="dropbtn4" class="btn btn-secondary dropdown-toggle"
+					type="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Color</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="#">Red</a></li>
+					<li><a class="dropdown-item" href="#">Blue</a></li>
+					<li><a class="dropdown-item" href="#">Black</a></li>
+					<li><a class="dropdown-item" href="#">Green</a></li>
+					<li><a class="dropdown-item" href="#">Yellow</a></li>
+				</ul>
+			</div>
+			<div class="dropdown" id="dropdown5">
+				<button id="dropbtn5" class="btn btn-secondary dropdown-toggle"
+					type="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Sort By</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="#">Popularity</a></li>
+					<li><a class="dropdown-item" href="#">Relevance</a></li>
+					<li><a class="dropdown-item" href="#">Price Low to High</a></li>
+					<li><a class="dropdown-item" href="#">Price High to Low</a></li>
+					<li><a class="dropdown-item" href="#">Newest First</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class=content-text>
+			<h3>Recomended for You</h3>
+		</div>
+
+		<div class="product1">
+			<a href=""> <img id="prodimg"
+				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+			</a>
+			<p id="prodName">
+				<b>Google Pixel 7 5G</b>
+			</p>
+			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<div class="star1">
+				<span id="1" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="2"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="3" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="4"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="5" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span>
+			</div>
+			<div class="prodIcon1">
+				<a href="">
+					<button id="prdbtn">Add to Cart</button>
+				</a>
+				<p class="prodprice">₹53,800</p>
+			</div>
+		</div>
+		<div class="product1">
+			<a href=""> <img id="prodimg"
+				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+			</a>
+			<p id="prodName">
+				<b>Google Pixel 7 5G</b>
+			</p>
+			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<div class="star1">
+				<span id="1" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="2"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="3" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="4"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="5" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span>
+			</div>
+			<div class="prodIcon1">
+				<a href="">
+					<button id="prdbtn">Add to Cart</button>
+				</a>
+				<p class="prodprice">₹53,800</p>
+			</div>
+		</div>
+		<div class="product2">
+			<a href=""> <img id="prodimg"
+				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+			</a>
+			<p id="prodName">
+				<b>Google Pixel 7 5G</b>
+			</p>
+			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<div class="star1">
+				<span id="1" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="2"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="3" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="4"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="5" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span>
+			</div>
+			<div class="prodIcon1">
+				<a href="">
+					<button id="prdbtn">Add to Cart</button>
+				</a>
+				<p class="prodprice">₹53,800</p>
+			</div>
+		</div>
+		<div class="product3">
+			<a href=""> <img id="prodimg"
+				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+			</a>
+			<p id="prodName">
+				<b>Google Pixel 7 5G</b>
+			</p>
+			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<div class="star1">
+				<span id="1" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="2"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="3" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="4"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="5" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span>
+			</div>
+			<div class="prodIcon1">
+				<a href="">
+					<button id="prdbtn">Add to Cart</button>
+				</a>
+				<p class="prodprice">₹53,800</p>
+			</div>
+		</div>
+		<div class="product4">
+			<a href=""> <img id="prodimg"
+				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+			</a>
+			<p id="prodName">
+				<b>Google Pixel 7 5G</b>
+			</p>
+			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<div class="star1">
+				<span id="1" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="2"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="3" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="4"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="5" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span>
+			</div>
+			<div class="prodIcon1">
+				<a href="">
+					<button id="prdbtn">Add to Cart</button>
+				</a>
+				<p class="prodprice">₹53,800</p>
+			</div>
+		</div>
+		<div class="product5">
+			<a href=""> <img id="prodimg"
+				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+			</a>
+			<p id="prodName">
+				<b>Google Pixel 7 5G</b>
+			</p>
+			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<div class="star1">
+				<span id="1" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="2"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="3" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="4"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="5" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span>
+			</div>
+			<div class="prodIcon1">
+				<a href="">
+					<button id="prdbtn">Add to Cart</button>
+				</a>
+				<p class="prodprice">₹53,800</p>
+			</div>
+		</div>
+		
+		<div class="product1">
+			<a href=""> <img id="prodimg"
+				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+			</a>
+			<p id="prodName">
+				<b>Google Pixel 7 5G</b>
+			</p>
+			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<div class="star1">
+				<span id="1" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="2"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="3" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="4"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="5" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span>
+			</div>
+			<div class="prodIcon1">
+				<a href="">
+					<button id="prdbtn">Add to Cart</button>
+				</a>
+				<p class="prodprice">₹53,800</p>
+			</div>
+		</div>
+		<div class="product6">
+			<a href=""> <img id="prodimg"
+				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+			</a>
+			<p id="prodName">
+				<b>Google Pixel 7 5G</b>
+			</p>
+			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<div class="star1">
+				<span id="1" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="2"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="3" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="4"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="5" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span>
+			</div>
+			<div class="prodIcon1">
+				<a href="">
+					<button id="prdbtn">Add to Cart</button>
+				</a>
+				<p class="prodprice">₹53,800</p>
+			</div>
+		</div>
+		<div class="product7">
+			<a href=""> <img id="prodimg"
+				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+			</a>
+			<p id="prodName">
+				<b>Google Pixel 7 5G</b>
+			</p>
+			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<div class="star1">
+				<span id="1" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="2"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="3" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="4"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="5" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span>
+			</div>
+			<div class="prodIcon1">
+				<a href="">
+					<button id="prdbtn">Add to Cart</button>
+				</a>
+				<p class="prodprice">₹53,800</p>
+			</div>
+		</div>
+		<div class="product8">
+			<a href=""> <img id="prodimg"
+				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+			</a>
+			<p id="prodName">
+				<b>Google Pixel 7 5G</b>
+			</p>
+			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<div class="star1">
+				<span id="1" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="2"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="3" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="4"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="5" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span>
+			</div>
+			<div class="prodIcon1">
+				<a href="">
+					<button id="prdbtn">Add to Cart</button>
+				</a>
+				<p class="prodprice">₹53,800</p>
+			</div>
+		</div>
+		<div class="product9">
+			<a href=""> <img id="prodimg"
+				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+			</a>
+			<p id="prodName">
+				<b>Google Pixel 7 5G</b>
+			</p>
+			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<div class="star1">
+				<span id="1" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="2"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="3" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="4"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="5" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span>
+			</div>
+			<div class="prodIcon1">
+				<a href="">
+					<button id="prdbtn">Add to Cart</button>
+				</a>
+				<p class="prodprice">₹53,800</p>
+			</div>
+		</div>
+		<div class="product10">
+			<a href=""> <img id="prodimg"
+				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+			</a>
+			<p id="prodName">
+				<b>Google Pixel 7 5G</b>
+			</p>
+			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<div class="star1">
+				<span id="1" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="2"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="3" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span> <span id="4"
+					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+				<span id="5" onclick=functionFillingUnfilling(this.id)
+					class="bi bi-star"></span>
+			</div>
+			<div class="prodIcon1">
+				<a href="">
+					<button id="prdbtn">Add to Cart</button>
+				</a>
+				<p class="prodprice">₹53,800</p>
+			</div>
+		</div>
+	</div>
+	<script>
+
+	function open(){
+		var value;
+		$.ajax({
+			type : "POST",
+			headers : {
+			'Content-Type' : 'application/json'
+			},
+			crossDomain : true,
+			url : "/home/product",
+			success : function(response) {
+				value=response;		
+				console.log(value);
+				},
+			error : function() {
+			}
+			});
+	}
+	function openRegister(){
+		var value;
+		$.ajax({
+			type : "POST",
+			headers : {
+			'Content-Type' : 'application/json'
+			},
+			crossDomain : true,
+			url : "/home/registration",
+			success : function(response) {
+				value=response;		
+				console.log(value);
+				},
+			error : function() {
+			}
+			});
+	}
+</script>
+</body>
+</html>

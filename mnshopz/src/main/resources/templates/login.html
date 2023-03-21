@@ -149,14 +149,14 @@
 	top: 208px;
 	left: 259px;
 	width: 719px;
-	height: 665px;
+	height: 702px;
 	background-color: #BEDBD7;
 }
 
 .leftText {
 	position: absolute;
-	top: 148px;
-	left: 294px;
+	top: 178px;
+	left: 277px;
 	width: 82px;
 	height: 33px;
 	font-family: arial;
@@ -169,8 +169,8 @@
 
 #number {
 	position: absolute;
-	top: 226px;
-	left: 133px;
+	top: 256px;
+	left: 145px;
 	width: 116px;
 	height: 17px;
 	font-family: arial;
@@ -184,8 +184,8 @@
 
 #numberField {
 	position: absolute;
-	top: 253px;
-	left: 133px;
+	top: 283px;
+	left: 116px;
 	width: 451px;
 	height: 50px;
 	background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -196,8 +196,8 @@
 
 #password {
 	position: absolute;
-	top: 323px;
-	left: 133px;
+	top: 353px;
+	left: 145px;
 	width: 76px;
 	height: 17px;
 	font-family: arial;
@@ -210,8 +210,8 @@
 
 #passwordField {
 	position: absolute;
-	top: 350px;
-	left: 133px;
+	top: 380px;
+	left: 116px;
 	width: 451px;
 	height: 50px;
 	background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -220,24 +220,10 @@
 	opacity: 1;
 }
 
-#register {
-	position: absolute;
-	top: 429px;
-	left: 133px;
-	width: 451px;
-	height: 50px;
-	color: #FFFFFF;
-	background-color: #03433B;
-	border: 0.5px solid;
-	border-color: #03433B;
-	opacity: 1;
-	border-radius: 25px;
-}
-
 .leftTxt2 {
 	position: absolute;
-	top: 499px;
-	left: 233px;
+	top: 529px;
+	left: 216px;
 	font-family: arial;
 	font-size: 16px;
 	color: #4A4A4A;
@@ -252,8 +238,9 @@
 .rightBox {
 	position: absolute;
 	top: 208px;
-	left: 976px; width : 720px;
-	height: 665px;
+	left: 976px;
+	width: 702px;
+	height: 702px;
 	background-color: #BEDBD7;
 	opacity: 1;
 	width: 720px;
@@ -261,18 +248,19 @@
 
 .content1Text {
 	position: absolute;
-	top: 119px;
+	top: 149px;
 	left: 137px;
 	width: 466px;
 	height: 95px;
 	text-align: left;
-	letter-spacing: NaNpx; 
+	letter-spacing: NaNpx;
 	font-family: arial;
 	font-size: 30px;
-	color : #03433B;
+	color: #03433B;
 	opacity: 1;
 	color: #03433B;
 }
+
 #butn1 {
 	position: absolute;
 	border: none;
@@ -284,10 +272,9 @@
 	color: #FFFFFF;
 }
 
-
 .content1Button {
 	position: absolute;
-	top: 224px;
+	top: 254px;
 	left: 136px;
 	width: 137px;
 	height: 40px;
@@ -295,9 +282,10 @@
 	border-radius: 20px;
 	background-color: #03433B;
 }
+
 #img1 {
 	position: absolute;
-	top: 317px;
+	top: 347px;
 	left: 137px;
 	width: 222px;
 	height: 189px;
@@ -308,17 +296,18 @@
 
 #img2 {
 	position: absolute;
-	top: 299px;
+	top: 329px;
 	left: 299px;
 	width: 222px;
 	height: 224px;
-	background: transparent 0% 0% no-repeat padding-box; 
+	background: transparent 0% 0% no-repeat padding-box;
 	opacity: 1;
 	border: 1px solid #707070;
 }
+
 #img3 {
 	position: absolute;
-	top: 317px;
+	top: 347px;
 	left: 461px;
 	width: 222px;
 	height: 189px;
@@ -327,31 +316,53 @@
 	opacity: 1;
 }
 
+#login {
+	position: absolute;
+	top: 459px;
+	left: 116px;
+	width: 451px;
+	height: 50px;
+	background: #03433B 0% 0% no-repeat padding-box;
+	border: 0.5px solid #03433B;
+	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 25px;
+	opacity: 1;
+}
+
+#loginPasswordSuccess {
+	position: absolute;
+	top: 365px;
+	height: 50px;
+	right: 140px;
+}
 </style>
 <script type="text/javascript">
-$(document).ready(function() {
-	  $('#register').click(function(event) {
-	    event.preventDefault(); // prevent form submission
+	$(document).ready(function() {
+		$('#register').click(function(event) {
+			event.preventDefault(); // prevent form submission
 
-	    var form = $('#my-form'); // select the form element
-	    var formData = form.serialize(); // get the form data
-	    var jsonData = JSON.stringify(formData); // convert form data to JSON
+			var form = $('#my-form'); // select the form element
+			var formData = form.serialize(); // get the form data
+			var jsonData = JSON.stringify(formData); // convert form data to JSON
 
-	    $.ajax({
-	      url: '/api/endpoint', // set the endpoint URL
-	      type: 'POST', // set the request method
-	      data: jsonData, // set the request data
-	      dataType: 'json', // set the expected response data type
-	      success: function(response) {
-	        console.log(response); // handle the response
-	      },
-	      error: function(xhr, status, error) {
-	        console.error(error); // handle the error
-	      }
-	    });
-	  });
+			$.ajax({
+				url : '/api/endpoint', // set the endpoint URL
+				type : 'POST', // set the request method
+				data : jsonData, // set the request data
+				dataType : 'json', // set the expected response data type
+				success : function(response) {
+					console.log(response); // handle the response
+				},
+				error : function(xhr, status, error) {
+					console.error(error); // handle the error
+				}
+			});
+		});
 	});
 </script>
+
 </head>
 <body>
 	<div class="content">
@@ -389,8 +400,6 @@ $(document).ready(function() {
 			<div class="leftText">
 				<b>Login</b>
 			</div>
-			
-		
 			<form action="" id="my-form">
 				<p id="number">
 					<b>Mobile Number</b>
@@ -399,11 +408,12 @@ $(document).ready(function() {
 				<p id="password">
 					<b>Password</b>
 				</p>
-				<input type="text" id="passwordField" required> 
-				<input type="submit" id="login" value="Login">
+				<input type="password" id="passwordField" required> <input
+					type="submit" id="login" value="Login">
 			</form>
-			<div class="leftTxt2"> 
-				<b>I don’t have an account!</b> <a href="http://localhost:8080/home/registration"> Register </a>
+			<div class="leftTxt2">
+				<b>I don’t have an account!</b> <a
+					href="http://localhost:8080/home/registration"> Register </a>
 			</div>
 		</div>
 		<div class="rightBox">

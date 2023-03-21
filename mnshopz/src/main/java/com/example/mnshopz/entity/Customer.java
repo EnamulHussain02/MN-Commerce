@@ -31,8 +31,8 @@ public class Customer {
 	@Column(name="c_number")
 	private Long c_number; 
 	
-	@Column(name="c_passowrd")
-	private String c_passowrd;
+	@Column(name="c_password")
+	private String c_password;
 
 	public Long getC_id() {
 		return c_id;
@@ -67,11 +67,11 @@ public class Customer {
 	}
 
 	public String getC_passowrd() {
-		return c_passowrd;
+		return c_password;
 	}
 
-	public void setC_passowrd(String c_passowrd) {
-		this.c_passowrd = c_passowrd;
+	public void setC_passowrd(String c_passwowrd) {
+		this.c_password = c_password;
 	}
 	
 	
