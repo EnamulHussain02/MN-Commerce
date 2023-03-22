@@ -27,17 +27,17 @@ public class CustomerService
 
 		 long number=Long.parseLong(num);
 		Map<String, Object> result= customerRepository.checkCustomer(number);
-		customerRepository.setCustomer(address, name, number, password);
+		
 		logger.info("check" + number);
-//		if(result.isEmpty())
-//		{
-//			
-//			
-//			return "Registred Successfully";
-//		}
-//		else {
-//			return "Already Existing User";
-//		}
-		return "Already Existing User";
+		if(result.isEmpty())
+		{
+			
+			customerRepository.setCustomer(address, name, number, password);
+			return "Registred Successfully";
+		}
+		else {
+			return "Already Existing User";
+		}
+		
 	}
 }

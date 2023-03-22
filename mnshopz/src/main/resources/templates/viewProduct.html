@@ -23,7 +23,7 @@
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-	
+
 <style>
 .content {
 	top: 0px;
@@ -89,13 +89,13 @@
 	width: 95px;
 	height: 22px;
 }
-.bi-person-circle{
+
+.bi-person-circle {
 	position: absolute;
 	top: 30px;
 	left: 1677px;
 	font-size: 35px;
 }
-
 
 #button1 {
 	border: none;
@@ -128,31 +128,130 @@
 	font-family: Arial;
 	color: #2C2C2C;
 }
-.content-image{
+
+.content-image {
 	position: absolute;
 	top: 140px;
 	left: 287px;
 	background: transparent no-repeat;
 }
-.content-image img{
+
+.content-image img {
 	width: 576px;
 	height: 576px;
 }
-.prodTitle{
+
+.prodTitle {
 	position: absolute;
 	top: 141px;
 	left: 921px;
 	width: 762px;
 	height: 99px;
 }
-.prodTitle h1{
+
+.prodTitle h1 {
 	font-family: arial;
 	font-size: 28px;
 	letter-spacing: 0px;
 	color: #2C2C2C;
 	font-weight: bold;
 	opacity: 1;
-
+}
+.star1 {
+	position: absolute;
+    top: 254px;
+    left: 921px;
+    cursor: pointer;
+}	
+.bi-star{
+	font-size: 30px;
+}
+.prodColor{
+	position: absolute;
+	top: 320px;
+	left: 921px;
+	height: 30px;
+	font-size: 18px;
+	font-family: arial;
+	letter-spacing: 0px;
+	text-align: left;
+}
+.prodCircle1{
+	position: absolute;
+	top: 316px;
+	left: 998px;
+	width: 31px;
+	height: 31px;
+	background: #FCB437;
+	border:none;
+	border-radius: 50px;
+}
+.prodCircle2{
+	position: absolute;
+	top: 316px;
+	left: 1059px;
+	width: 31px;
+	height: 31px;
+	background: #03433B;
+	border:none;
+	border-radius: 50px;
+}
+.prodCircle3{
+	position: absolute;
+	top: 316px;
+	left: 1121px;
+	width: 31px;
+	height: 31px;
+	background: #5895B3;
+	border:none;
+	border-radius: 50px;
+}
+.prodCircle4{
+	position: absolute;
+	top: 316px;
+	left: 1182px;
+	width: 31px;
+	height: 31px;
+	background: #F8D6CD;
+	border:none;
+	border-radius: 50px;
+}
+.prodPrice{
+	position: absolute;
+	top: 374px;
+	left: 921px;
+	width: 57px;
+	height: 26px;
+	color: #2C2C2C;
+	font-size: 18px;
+	font-family: arial;
+	letter-spacing: 0px;
+	text-align: left;
+}
+.prodCost{
+	position: absolute;
+	top: 370px;
+	left: 998px;
+	width: 139px;
+	height: 34px;
+	text-align: left;
+	color: #2C2C2C;
+	font-size: 28px;
+	font-family: arial;
+	letter-spacing: 0px;
+	text-align: left;
+}
+.prodDescTitel{
+	position: absolute;
+	top: 435px;
+	left: 921px;
+	width: 125px;
+	height: 23px;
+	font-size: 18px;
+	font-family: arial;
+	letter-spacing: 0px;
+	color: #2C2C2C;
+	opacity: 1;
 }
 </style>
 <body>
@@ -181,17 +280,33 @@
 					<button id="button4">Add New</button>
 				</a>
 			</div>
-			
-				<i class="bi bi-person-circle"></i>
+
+			<i class="bi bi-person-circle"></i>
 		</div>
 		<div class="content-image">
-			<a href="">
-				<img src="https://m.media-amazon.com/images/I/71gvgMp9ITL._SX679_.jpg"> 
-			</a>	
-		</div>	
+			<a href=""> <img
+				src="https://m.media-amazon.com/images/I/71gvgMp9ITL._SX679_.jpg">
+			</a>
+		</div>
 		<div class="prodTitle">
-			<h1>HP Victus Gaming Latest AMD Ryzen 5 5600H Processor 16.1 inch(40.9 cm) FHD Gaming Laptop (8GB AM/512GB SSD/4GB</h1>
-		</div>	
+			<h1>HP Victus Gaming Latest AMD Ryzen 5 5600H Processor 16.1
+				inch(40.9 cm) FHD Gaming Laptop (8GB AM/512GB SSD/4GB</h1>
+		</div>
+		<div class="star1">
+			<span id="star1" onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span> 
+			<span id="star2" onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+			<span id="star3" onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span> 
+			<span id="star4" onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+			<span id="star5" onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
+		</div>
+		<p class="prodColor"><b>Color: </b></p>
+		<button id="yellow" class="prodCircle1"></button>
+		<button id="black" class="prodCircle2"></button>
+		<button id="blue" class="prodCircle3"></button>
+		<button id="pink" class="prodCircle4"></button>	
+		<p class="prodPrice"><b>Price:</b></p>
+		<p class="prodCost"><b><i class="bi bi-currency-rupee">45,600</i></b></p>
+		<h6 class="prodDescTitel"><b>Description</b></h6>
 	</div>
 </body>
 </html>

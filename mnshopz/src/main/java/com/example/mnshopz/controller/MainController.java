@@ -1,9 +1,13 @@
 package com.example.mnshopz.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +18,8 @@ import com.google.gson.Gson;
 
 @Controller
 public class MainController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(ProductsServiceImpl.class);
 	
 	@Autowired
 	CustomerService customerService;
@@ -44,14 +50,27 @@ public class MainController {
 	
 	@PostMapping("/newUser")
 	public String viewUser(@RequestBody Map<String,Object> userRegistration) {
-		customerService.setUsers(userRegistration);
-		return "landing";
+		String result=customerService.setUsers(userRegistration);
+		logger.info(result);
+		return "newUser";
 	}
 	
 	@PostMapping("/products")
 	public String sendProducts(){
-		Map<String,Object> productData=productService.getAllProducts();
-		String finalProducts;
-		return finalProducts=new Gson().toJson(productData);
+		
+		String finalProducts="";
+		try {
+			
+		
+		Map<String,Object> productData=new HashMap<>();
+		productData=productService.getAllProducts();
+		finalProducts=new Gson().toJson(productData);
+		logger.info(finalProducts);
+		
+		}
+		catch (Exception e) {
+			logger.info("Error is"+e);
+		}
+		return finalProducts;
 	}
 }

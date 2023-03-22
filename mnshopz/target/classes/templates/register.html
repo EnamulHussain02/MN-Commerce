@@ -368,6 +368,7 @@
 
 <script>
 	function collect() {
+	
 		var name = document.getElementById('userName').value;
 		var number = document.getElementById('number').value;
 		var password = document.getElementById('password').value;
@@ -391,8 +392,10 @@
 			data : JSON.stringify(data), // pass the data in the "data" property
 			dataType : 'json', // set the expected response data type
 			success : function(response) {
-				console.log(response);
-				console.log(data); // handle the response
+				debugger;
+				alert("You Mobile Number successfully Registred");
+				/* console.log("hiii"); */
+				window.location.href = "http://localhost:8080/home/login?"; // handle the response
 			}
 		});
 	}
@@ -456,7 +459,7 @@
 			<b>Register</b>
 		</div>
 		<div class="textBoxes">
-			<form>
+			<div>
 				<p id="nameTxt">
 					<b>User Name</b>
 				</p>
@@ -476,7 +479,7 @@
 				<input type="text" id="address" name="c_address" required> <input
 					type="submit" class="registerBtn" onclick="collect()"
 					value="Register">
-			</form>
+			</div>
 			<div class="rightTxt2">
 				<b>Already I have an account!</b> <a
 					href="http://localhost:8080/home/login"> Login </a>
