@@ -274,7 +274,7 @@
 
 .content-text {
 	position: relative;
-	top: 440px;
+	top: 490px;
 	left: 258px;
 	margin-top: 25px;
 	width: 316px;
@@ -422,29 +422,28 @@
 }
 </style>
 <script type="text/javascript">
-
-
+function open(){
 	
-
 	$.ajax({
 	    type : "POST",
 	    headers : {
 	      'Content-Type' : 'application/json'
 	    },
 	    crossDomain : true,
-	    url : "/home/register",
-	    success : function(response) {
-	      
+	    url : "/home/products",
+	    success : function(data) {
+	      console.log(data);
 	    },
 	    error : function() {
 	    }
 	  });
+}
   
 </script>
 
 <title>Online Ecommerce - MNCommerce</title>
 </head>
-<body>
+<body onload="open()">
 	<div class="container1">
 		<div class="header1">
 
@@ -635,12 +634,12 @@
 		</div>
 		<div class="product2">
 			<a href=""> <img id="prodimg"
-				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+				src="https://m.media-amazon.com/images/I/51ZT3aMrJIL._SX679_.jpg">
 			</a>
 			<p id="prodName">
-				<b>Google Pixel 7 5G</b>
+				<b>pTron TWS Earbuds</b>
 			</p>
-			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<p id="prodDesc">Wireless Headphones</p>
 			<div class="star1">
 				<span id="1" onclick=functionFillingUnfilling(this.id)
 					class="bi bi-star"></span> <span id="2"
@@ -655,17 +654,17 @@
 				<a href="">
 					<button id="prdbtn">Add to Cart</button>
 				</a>
-				<p class="prodprice">₹53,800</p>
+				<p class="prodprice">₹799</p>
 			</div>
 		</div>
 		<div class="product3">
 			<a href=""> <img id="prodimg"
-				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+				src="https://m.media-amazon.com/images/I/61HPkBF4XsS._SX679_.jpg">
 			</a>
 			<p id="prodName">
-				<b>Google Pixel 7 5G</b>
+				<b>Lenovo Chromebook 3</b>
 			</p>
-			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<p id="prodDesc">4GB RAM, 64GB eMMC</p>
 			<div class="star1">
 				<span id="1" onclick=functionFillingUnfilling(this.id)
 					class="bi bi-star"></span> <span id="2"
@@ -680,17 +679,17 @@
 				<a href="">
 					<button id="prdbtn">Add to Cart</button>
 				</a>
-				<p class="prodprice">₹53,800</p>
+				<p class="prodprice">₹40,251</p>
 			</div>
 		</div>
 		<div class="product4">
 			<a href=""> <img id="prodimg"
-				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+				src="https://m.media-amazon.com/images/I/51e48JV2GfL._UL1200_.jpg">
 			</a>
 			<p id="prodName">
-				<b>Google Pixel 7 5G</b>
+				<b>Sparx mens Sneakers</b>
 			</p>
-			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<p id="prodDesc">mens Sneakers</p>
 			<div class="star1">
 				<span id="1" onclick=functionFillingUnfilling(this.id)
 					class="bi bi-star"></span> <span id="2"
@@ -705,17 +704,17 @@
 				<a href="">
 					<button id="prdbtn">Add to Cart</button>
 				</a>
-				<p class="prodprice">₹53,800</p>
+				<p class="prodprice">₹599</p>
 			</div>
 		</div>
 		<div class="product5">
 			<a href=""> <img id="prodimg"
-				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+				src="https://m.media-amazon.com/images/I/61QJ3iZPNYL._UL1100_.jpg">
 			</a>
 			<p id="prodName">
-				<b>Google Pixel 7 5G</b>
+				<b>ASIAN womens Loafer</b>
 			</p>
-			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<p id="prodDesc"> ASIAN womens Loafer</p>
 			<div class="star1">
 				<span id="1" onclick=functionFillingUnfilling(this.id)
 					class="bi bi-star"></span> <span id="2"
@@ -730,43 +729,18 @@
 				<a href="">
 					<button id="prdbtn">Add to Cart</button>
 				</a>
-				<p class="prodprice">₹53,800</p>
+				<p class="prodprice">₹439</p>
 			</div>
 		</div>
 		
-		<div class="product1">
-			<a href=""> <img id="prodimg"
-				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
-			</a>
-			<p id="prodName">
-				<b>Google Pixel 7 5G</b>
-			</p>
-			<p id="prodDesc">8GB Ram 128GB Storage</p>
-			<div class="star1">
-				<span id="1" onclick=functionFillingUnfilling(this.id)
-					class="bi bi-star"></span> <span id="2"
-					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
-				<span id="3" onclick=functionFillingUnfilling(this.id)
-					class="bi bi-star"></span> <span id="4"
-					onclick=functionFillingUnfilling(this.id) class="bi bi-star"></span>
-				<span id="5" onclick=functionFillingUnfilling(this.id)
-					class="bi bi-star"></span>
-			</div>
-			<div class="prodIcon1">
-				<a href="">
-					<button id="prdbtn">Add to Cart</button>
-				</a>
-				<p class="prodprice">₹53,800</p>
-			</div>
-		</div>
 		<div class="product6">
 			<a href=""> <img id="prodimg"
-				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+				src="https://m.media-amazon.com/images/I/71a4ZQNqTiL._SX679_.jpg">
 			</a>
 			<p id="prodName">
-				<b>Google Pixel 7 5G</b>
+				<b>Samsung LED Smart TV</b>
 			</p>
-			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<p id="prodDesc">Wondertainment Series Smart TV </p>
 			<div class="star1">
 				<span id="1" onclick=functionFillingUnfilling(this.id)
 					class="bi bi-star"></span> <span id="2"
@@ -781,17 +755,17 @@
 				<a href="">
 					<button id="prdbtn">Add to Cart</button>
 				</a>
-				<p class="prodprice">₹53,800</p>
+				<p class="prodprice">₹13,990</p>
 			</div>
 		</div>
 		<div class="product7">
 			<a href=""> <img id="prodimg"
-				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+				src="https://m.media-amazon.com/images/I/41QPv5h1veL._SX300_SY300_QL70_FMwebp_.jpg">
 			</a>
 			<p id="prodName">
-				<b>Google Pixel 7 5G</b>
+				<b>Samsung Galaxy S22</b>
 			</p>
-			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<p id="prodDesc">12GB, 256GB Storage</p>
 			<div class="star1">
 				<span id="1" onclick=functionFillingUnfilling(this.id)
 					class="bi bi-star"></span> <span id="2"
@@ -806,17 +780,17 @@
 				<a href="">
 					<button id="prdbtn">Add to Cart</button>
 				</a>
-				<p class="prodprice">₹53,800</p>
+				<p class="prodprice">₹1,09,999</p>
 			</div>
 		</div>
 		<div class="product8">
 			<a href=""> <img id="prodimg"
-				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+				src="https://m.media-amazon.com/images/I/41f16alH6rL._SX300_SY300_QL70_FMwebp_.jpg">
 			</a>
 			<p id="prodName">
-				<b>Google Pixel 7 5G</b>
+				<b>realme narzo 50i</b>
 			</p>
-			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<p id="prodDesc"> 3GB RAM+32GB Storage</p>
 			<div class="star1">
 				<span id="1" onclick=functionFillingUnfilling(this.id)
 					class="bi bi-star"></span> <span id="2"
@@ -831,17 +805,17 @@
 				<a href="">
 					<button id="prdbtn">Add to Cart</button>
 				</a>
-				<p class="prodprice">₹53,800</p>
+				<p class="prodprice">₹6,499</p>
 			</div>
 		</div>
 		<div class="product9">
 			<a href=""> <img id="prodimg"
-				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+				src="https://m.media-amazon.com/images/I/81h3ux7mOOL._UL1500_.jpg">
 			</a>
 			<p id="prodName">
-				<b>Google Pixel 7 5G</b>
+				<b>Adidas Men T-Shirt</b>
 			</p>
-			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<p id="prodDesc">Adidas Men T-Shirt</p>
 			<div class="star1">
 				<span id="1" onclick=functionFillingUnfilling(this.id)
 					class="bi bi-star"></span> <span id="2"
@@ -856,17 +830,17 @@
 				<a href="">
 					<button id="prdbtn">Add to Cart</button>
 				</a>
-				<p class="prodprice">₹53,800</p>
+				<p class="prodprice">₹1,339</p>
 			</div>
 		</div>
 		<div class="product10">
 			<a href=""> <img id="prodimg"
-				src="https://m.media-amazon.com/images/I/61znAJyslHL._AC_SY200_.jpg">
+				src="https://m.media-amazon.com/images/I/616H5xrlc+L._UL1500_.jpg">
 			</a>
 			<p id="prodName">
-				<b>Google Pixel 7 5G</b>
+				<b>Women's Suit Set</b>
 			</p>
-			<p id="prodDesc">8GB Ram 128GB Storage</p>
+			<p id="prodDesc">Women's Suit Set</p>
 			<div class="star1">
 				<span id="1" onclick=functionFillingUnfilling(this.id)
 					class="bi bi-star"></span> <span id="2"
@@ -881,13 +855,13 @@
 				<a href="">
 					<button id="prdbtn">Add to Cart</button>
 				</a>
-				<p class="prodprice">₹53,800</p>
+				<p class="prodprice">₹999</p>
 			</div>
 		</div>
 	</div>
 	<script>
 
-	function open(){
+	/* function open(){
 		var value;
 		$.ajax({
 			type : "POST",
@@ -903,7 +877,7 @@
 			error : function() {
 			}
 			});
-	}
+	} */
 	function openRegister(){
 		var value;
 		$.ajax({

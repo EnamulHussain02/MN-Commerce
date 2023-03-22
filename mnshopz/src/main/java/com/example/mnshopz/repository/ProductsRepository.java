@@ -11,7 +11,7 @@ import com.example.mnshopz.entity.Products;
 public interface ProductsRepository extends JpaRepository<Products,Long>
 {
 	
-	  @Query(nativeQuery = true,value="Select * from products where product_id=111 ")
+	  @Query(nativeQuery = true,value="Select * from products ")
 	  public List<Map<String,Object>> getProductDetails();
      
 	
