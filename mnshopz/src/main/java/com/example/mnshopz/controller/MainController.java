@@ -7,10 +7,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.mnshopz.service.CustomerService;
 import com.example.mnshopz.service.ProductsServiceImpl;
@@ -49,6 +49,7 @@ public class MainController {
 	}
 	
 	@PostMapping("/newUser")
+	@ResponseBody
 	public String viewUser(@RequestBody Map<String,Object> userRegistration) {
 		String result=customerService.setUsers(userRegistration);
 		logger.info(result);
@@ -56,6 +57,7 @@ public class MainController {
 	}
 	
 	@PostMapping("/products")
+	@ResponseBody
 	public String sendProducts(){
 		
 		String finalProducts="";
