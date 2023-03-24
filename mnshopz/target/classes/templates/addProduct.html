@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+crossorigin="anonymous">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+crossorigin="anonymous">
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+crossorigin="anonymous"></script>
+
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<title>MNShopz Add Product</title>
+	<style type="text/css">
+		.header1 {
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100px;
+			background: #FFFFFF 0% 0% no-repeat padding-box;
+			box-shadow: 0px 3px 6px #03433b39;
+			opacity: 1;
+			position: fixed;
+			z-index: 30;
+		}
+		#image1 {
+			width: 184px;
+			position: absolute;
+			height: 100px;
+			left: 258px;
+			border: 2px solid #03433B;
+			opacity: 1;
+		}
+		.rightHeader {
+			display: flex;
+			margin-right: 0px;
+		}
+		.headerIcon1 {
+			position: absolute;
+			top: 39px;
+			left: 892px;
+			width: 52px;
+			height: 22px;
+		}
+		.headerIcon2 {
+			position: absolute;
+			top: 39px;
+			left: 1017px;
+			width: 79px;
+			height: 22px;
+		}
+		.headerIcon3 {
+			position: absolute;
+			top: 39px;
+			left: 1169px;
+			width: 119px;
+			height: 22px;
+		}
+		.headerIcon4 {
+			position: absolute;
+			top: 39px;
+			left: 1360px;
+			width: 87px;
+			height: 22px;
+		}
+		.headerIcon5 {
+			position: absolute;
+			top: 25px;
+			left: 1496px;
+			right: 223px;
+			width: 201px;
+			height: 50px;
+			border: none;
+			border: 25px;
+		}
+		#button1 {
+			border: none;
+			background: none;
+			font-size: 20px;
+			font-family: Arial;
+			color: #2C2C2C;
+		}
+		#button2 {
+			border: none;
+			background: none;
+			font-size: 20px;
+			font-family: Arial;
+			color: #2C2C2C;
+		}
+		#button3 {
+			width: 131px;
+			height: 22px;
+			text-align: left;
+			font: normal normal normal 20px/23px Arial;
+			letter-spacing: 0px;
+			opacity: 1;
+			border: none;
+			background: none;
+			font-size: 20px;
+			font-family: Arial;
+			color: #2C2C2C;
+		}
+		#button4 {
+			width: 94px;
+			height: 22px;
+			text-align: left;
+			font: normal normal normal 20px/23px Arial;
+			letter-spacing: 0px;
+			color: #2C2C2C;
+			opacity: 1;
+			border: none;
+			background: none;
+			font-size: 20px;
+			font-family: Arial;
+		}
+		#button5 {
+			border-radius: 25px;
+			background-color: #03433B;
+			left: 1532px;
+			top: 39px;
+			width: 201px;
+			height: 50px;
+			font-size: 20px;
+			font-family: Arial;
+			color: #FFFFFF;
+		}
+		.body-content{
+			position: absolute;
+			top: 172px;
+			left: 259px;
+			width: 1438px;
+			height: 702px;
+			/* UI Properties */
+			background: #BEDBD7 0% 0% no-repeat padding-box;
+			opacity: 1;
+		}
+		.add-product{
+			position: absolute;
+			top: 31px;
+			left: 611px;
+			width: 180px;
+			height: 33px;
+			text-align: left;
+			font: normal normal bold 30px/34px Arial;
+			letter-spacing: 0px;
+			color: #03433B;
+			opacity: 1;
+		}
+		.product-name{
+			position: absolute;
+			top: 87px;
+			left: 247px;
+			width: 100px;
+			height: 17px;
+			text-align: left;
+			font: normal normal normal 16px/18px Arial;
+			letter-spacing: 0px;
+			color: #03433B;
+			opacity: 1;
+		}
+		.product-name-input{
+			position: absolute;
+			top: 114px;
+			left: 247px;
+			width: 451px;
+			height: 50px;
+			background: #FFFFFF 0% 0% no-repeat padding-box;
+			border: 0.5px solid #03433B;
+			opacity: 1;
+		}
+		.product-quantity{
+			position: absolute;
+			top: 180px;
+			left: 247px;
+			width: 116px;
+			height: 17px;
+			text-align: left;
+			font: normal normal normal 16px/18px Arial;
+			letter-spacing: 0px;
+			color: #03433B;
+			opacity: 1;
+		}
+		.product-quantity-input{
+			position: absolute;
+			top: 207px;
+			left: 247px;
+			width: 451px;
+			height: 50px;
+			background: #FFFFFF 0% 0% no-repeat padding-box;
+			border: 0.5px solid #03433B;
+			opacity: 1;
+		}
+		.product-color{
+			position: absolute;
+			top: 273px;
+			left: 247px;
+			width: 98px;
+			height: 17px;
+			text-align: left;
+			font: normal normal normal 16px/18px Arial;
+			letter-spacing: 0px;
+			color: #03433B;
+			opacity: 1;
+		}
+		.product-color-input{
+			position: absolute;
+			top: 300px;
+			left: 247px;
+			width: 451px;
+			height: 50px;
+			background: #FFFFFF 0% 0% no-repeat padding-box;
+			border: 0.5px solid #03433B;
+			opacity: 1;
+		}
+		.product-barcode{
+			position: absolute;
+			top: 366px;
+			left: 247px;
+			width: 118px;
+			height: 17px;
+			text-align: left;
+			font: normal normal normal 16px/18px Arial;
+			letter-spacing: 0px;
+			color: #03433B;
+			opacity: 1;
+		}
+		.product-barcode-input{
+			position: absolute;
+			top: 393px;
+			left: 247px;
+			width: 451px;
+			height: 50px;
+			background: #FFFFFF 0% 0% no-repeat padding-box;
+			border: 0.5px solid #03433B;
+			opacity: 1;
+		}
+		.product-description{
+			position: absolute;
+			top: 459px;
+			left: 247px;
+			width: 140px;
+			height: 17px;
+			text-align: left;
+			font: normal normal normal 16px/18px Arial;
+			letter-spacing: 0px;
+			color: #03433B;
+			opacity: 1;
+		}
+		.product-description-input{
+			position: absolute;
+			top: 486px;
+			left: 247px;
+			width: 945px;
+			height: 110px;
+			background: #FFFFFF 0% 0% no-repeat padding-box;
+			border: 0.5px solid #03433B;
+			opacity: 1;
+			}
+			.product-price{
+				position: absolute;
+				top: 87px;
+				left: 741px;
+				width: 95px;
+				height: 17px;
+				text-align: left;
+				font: normal normal normal 16px/18px Arial;
+				letter-spacing: 0px;
+				color: #03433B;
+				opacity: 1;
+			}
+			.product-price-input{
+				position: absolute;
+				top: 114px;
+				left: 741px;
+				width: 451px;
+				height: 50px;
+				background: #FFFFFF 0% 0% no-repeat padding-box;
+				border: 0.5px solid #03433B;
+				opacity: 1;
+			}
+			.product-type{
+				position: absolute;
+				top: 180px;
+				left: 741px;
+				width: 94px;
+				height: 17px;
+				text-align: left;
+				font: normal normal normal 16px/18px Arial;
+				letter-spacing: 0px;
+				color: #03433B;
+				opacity: 1;
+			}
+			.product-type-input{
+				position: absolute;
+				top: 207px;
+				left: 741px;
+				width: 451px;
+				height: 50px;
+				background: #FFFFFF 0% 0% no-repeat padding-box;
+				border: 0.5px solid #03433B;
+				opacity: 1;
+			}
+			.product-discount{
+				position: absolute;
+				top: 273px;
+				left: 741px;
+				width: 120px;
+				height: 17px;
+				text-align: left;
+				font: normal normal normal 16px/18px Arial;
+				letter-spacing: 0px;
+				color: #03433B;
+				opacity: 1;
+			}
+			.product-discount-input{
+				position: absolute;
+				top: 300px;
+				left: 741px;
+				width: 451px;
+				height: 50px;
+				background: #FFFFFF 0% 0% no-repeat padding-box;
+				border: 0.5px solid #03433B;
+				opacity: 1;
+			}
+			.product-image{
+				position: absolute;
+				top: 366px;
+				left: 741px;
+				width: 104px;
+				height: 17px;
+				text-align: left;
+				font: normal normal normal 16px/18px Arial;
+				letter-spacing: 0px;
+				color: #03433B;
+				opacity: 1;
+			}
+			.product-image-input{
+				position: absolute;
+				top: 393px;
+				left: 741px;
+				width: 322px;
+				height: 50px;
+				background: #FFFFFF 0% 0% no-repeat padding-box;
+				border: 0.5px solid #03433B;
+				opacity: 1;
+			}
+			.upload{
+				position: absolute;
+				top: 393px;
+				left: 1074px;
+				padding-left: 40px;
+				width: 118px;
+				height: 50px;
+				background: #FFFFFF 0% 0% no-repeat padding-box;
+				border: 0.5px solid #03433B;
+				opacity: 1;
+			}
+			#upload-icon{
+				position: absolute;
+				top: 14px;
+				left: 18.41px;
+				width: 22px;
+				height: 22px;
+				background: white 0% 0% no-repeat padding-box;
+				color: #03433B;
+				opacity: 1;
+			}
+			.cancel{
+				position: absolute;
+				top: 622px;
+				left: 247px;
+				width: 224px;
+				height: 50px;
+				background: #BEDBD7 0% 0% no-repeat padding-box;
+				border: 0.5px solid #03433B;
+				border-radius: 25px;
+				color: #4A4A4A;
+				opacity: 1;
+			}
+			.submit{
+				position: absolute;
+				top: 622px;
+				left: 968px;
+				width: 224px;
+				height: 50px;
+				background: #03433B 0% 0% no-repeat padding-box;
+				border: 0.5px solid #03433B;
+				border-radius: 25px;
+				color: white;
+				opacity: 1;
+			}
+	</style>
+</head>
+<body>
+
+	<div class="header1">
+		 <!-- <img id="image1"
+		 src="https://storage.googleapis.com/smco-web-static-assets/TraineeProject/MNshopzz_logo.png"> -->
+		<div class="headerIcon1">
+			<a href=""><button id="button1">About</button></a>
+		</div>
+		<div class="headerIcon2">
+			<a href=""><button id="button2">Products</button></a>
+		</div>
+		<div class="headerIcon3">
+			<a href=""><button id="button3">Order History</button></a>
+		</div>
+		<div class="headerIcon4">
+			<a href=""><button id="button4">Add New</button></a>
+		</div>
+		<div class="headerIcon5">
+			<a href="http://localhost:8080/home/registration"><button id="button5" onclick=openRegister()>Register/Login</button></a>
+		</div>
+	</div>
+	<div class="body-content">
+		<p class="add-product">Add Product</p>
+		<label class="product-name">Product name</label>
+		<input type="text" name="product-name" class="product-name-input">
+		<label class="product-quantity">Product quantity</label>
+		<input type="number" name="product-quantity" class="product-quantity-input">
+		<label class="product-color">Product color</label>
+		<input type="text" name="product-color" class="product-color-input">
+		<label class="product-barcode">Product barcode</label>
+		<input type="number" name="product-barcode" class="product-barcode-input">
+		<label class="product-description">Product Description</label>
+		<input type="text" name="product-description" class="product-description-input">
+		<label class="product-price">Product price</label>
+		<input type="number" name="product-price" class="product-price-input">
+		<label class="product-type">Product type</label>
+		<input type="text" name="product-type" class="product-type-input">
+		<label class="product-discount">Product discount</label>
+		<input type="number" name="product-discount" class="product-discount-input">
+		<label class="product-image">Product image</label>
+		<input type="text" name="product-image" class="product-image-input">
+		<button class="upload"><span class="material-icons" id="upload-icon">file_upload</span>Upload</button>
+		<button class="cancel">Cancel</button>
+		<a href=""><button class="submit">Submit</button></a>
+	</div>
+
+</body>
+</html>

@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.mnshopz.entity.Products;
 import com.example.mnshopz.repository.ProductsRepository;
 
 
@@ -22,10 +23,10 @@ public class ProductsServiceImpl{
 
 	
 	public Map<String, Object> getAllProducts() {
-		Map<String, Object> prod=new HashMap<>();
 		List<Map<String, Object>> allProducts=productsRepository.getProductDetails();
-		    prod.put("Products", allProducts);
-		    return prod;
+		Map<String,Object> resultData= new HashMap<>();
+		resultData.put("products", allProducts);
+		    return resultData;
 	}
 	
 

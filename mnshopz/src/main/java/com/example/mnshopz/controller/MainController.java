@@ -1,6 +1,7 @@
 package com.example.mnshopz.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.mnshopz.entity.Products;
 import com.example.mnshopz.service.CustomerService;
 import com.example.mnshopz.service.ProductsServiceImpl;
 import com.google.gson.Gson;
@@ -51,9 +53,18 @@ public class MainController {
 	@PostMapping("/newUser")
 	@ResponseBody
 	public String viewUser(@RequestBody Map<String,Object> userRegistration) {
-		String result=customerService.setUsers(userRegistration);
-		logger.info(result);
-		return "newUser";
+		Map<String,Object> result=customerService.setUsers(userRegistration);
+		String userDetails=new Gson().toJson(result);
+		return userDetails;
+	}
+	
+	
+	@PostMapping("/userLogin")
+	@ResponseBody
+	public String loginUser(@RequestBody Map<String,Object> userLogin) {
+		Map<String,Object> loginDetails=customerService.verifyUser(userLogin);
+		String result=new Gson().toJson(loginDetails);
+		return result;
 	}
 	
 	@PostMapping("/products")
@@ -61,14 +72,12 @@ public class MainController {
 	public String sendProducts(){
 		
 		String finalProducts="";
-		try {
-			
-		
-		Map<String,Object> productData=new HashMap<>();
-		productData=productService.getAllProducts();
-		finalProducts=new Gson().toJson(productData);
-		logger.info(finalProducts);
-		
+		try {		
+				Map<String, Object> productData=productService.getAllProducts();
+				logger.info("check"+productData);
+				
+			finalProducts=new Gson().toJson(productData);
+			logger.info(finalProducts);
 		}
 		catch (Exception e) {
 			logger.info("Error is"+e);
