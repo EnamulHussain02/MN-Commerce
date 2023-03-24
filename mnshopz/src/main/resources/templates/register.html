@@ -392,10 +392,18 @@
 			data : JSON.stringify(data), // pass the data in the "data" property
 			dataType : 'json', // set the expected response data type
 			success : function(response) {
-				debugger;
-				alert("You Mobile Number successfully Registred");
-				/* console.log("hiii"); */
-				window.location.href = "http://localhost:8080/home/login?"; // handle the response
+				var data=response;
+				if(data.status=="201"){
+					alert("You Mobile Number successfully Registred");
+					window.location.href = "http://localhost:8080/home/landing?";
+				}
+				else{
+					alert("You are an Registred user please Login kindly")
+					window.location.href = "http://localhost:8080/home/login?";
+				}
+				
+				
+				 // handle the response
 			}
 		});
 	}

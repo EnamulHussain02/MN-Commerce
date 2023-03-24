@@ -19,143 +19,146 @@ public class Products {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="product_Id")
-	private Long pId;
+	private Long product_Id;
 	
 	@Column(name="product_Name")
-	private String pName;
+	private String product_Name;
 	
 	@Column(name="product_Description")
-	private String pDescription;
+	private String product_Description;
 	
 	@Column(name="product_Price")
-	private double pPrice;
+	private double product_Price;
 	
 	@Column(name="product_Status")
-	private String pStatus;
+	private String product_Status;
 	
 	@Column(name="product_Barcode")
-	private long pBarcode;
+	private long product_Barcode;
 	
 	@Column(name="product_Quantity")
-	private int pQuantity;
+	private int product_Quantity;
 	
 	@Column(name="product_image")
-	private String pImage;
+	private String product_image;
 	
 	@Column(name="product_starratting")
-	private String p_Starratting;
+	private String product_starratting;
 	
 	@Column(name="product_color")
-	private String p_color;
+	private String product_color;
 	
 	@Column(name="product_type")
-	private String p_Type;
+	private String product_type;
 	
 	@Column(name="product_discount")
-	private double p_discount;
-	
+	private double product_discount;
+
+	public Long getProduct_Id() {
+		return product_Id;
+	}
+
+	public void setProduct_Id(Long product_Id) {
+		this.product_Id = product_Id;
+	}
+
+	public String getProduct_Name() {
+		return product_Name;
+	}
+
+	public void setProduct_Name(String product_Name) {
+		this.product_Name = product_Name;
+	}
+
+	public String getProduct_Description() {
+		return product_Description;
+	}
+
+	public void setProduct_Description(String product_Description) {
+		this.product_Description = product_Description;
+	}
+
+	public double getProduct_Price() {
+		return product_Price;
+	}
+
+	public void setProduct_Price(double product_Price) {
+		this.product_Price = product_Price;
+	}
+
+	public String getProduct_Status() {
+		return product_Status;
+	}
+
+	public void setProduct_Status(String product_Status) {
+		this.product_Status = product_Status;
+	}
+
+	public long getProduct_Barcode() {
+		return product_Barcode;
+	}
+
+	public void setProduct_Barcode(long product_Barcode) {
+		this.product_Barcode = product_Barcode;
+	}
+
+	public int getProduct_Quantity() {
+		return product_Quantity;
+	}
+
+	public void setProduct_Quantity(int product_Quantity) {
+		this.product_Quantity = product_Quantity;
+	}
+
+	public String getProduct_image() {
+		return product_image;
+	}
+
+	public void setProduct_image(String product_image) {
+		this.product_image = product_image;
+	}
+
+	public String getProduct_starratting() {
+		return product_starratting;
+	}
+
+	public void setProduct_starratting(String product_starratting) {
+		this.product_starratting = product_starratting;
+	}
+
+	public String getProduct_color() {
+		return product_color;
+	}
+
+	public void setProduct_color(String product_color) {
+		this.product_color = product_color;
+	}
+
+	public String getProduct_type() {
+		return product_type;
+	}
+
+	public void setProduct_type(String product_type) {
+		this.product_type = product_type;
+	}
+
+	public double getProduct_discount() {
+		return product_discount;
+	}
+
+	public void setProduct_discount(double product_discount) {
+		this.product_discount = product_discount;
+	}
+
 	@Override
 	public String toString() {
-		return "Products [pId=" + pId + ", pName=" + pName + ", pDescription=" + pDescription + ", pPrice=" + pPrice
-				+ ", pStatus=" + pStatus + ", pBarcode=" + pBarcode + ", pQuantity=" + pQuantity + ", pImage=" + pImage
-				+ ", p_Starratting=" + p_Starratting + ", p_color=" + p_color + ", p_Type=" + p_Type + ", p_discount="
-				+ p_discount + "]";
+		return "Products [product_Id=" + product_Id + ", product_Name=" + product_Name + ", product_Description="
+				+ product_Description + ", product_Price=" + product_Price + ", product_Status=" + product_Status
+				+ ", product_Barcode=" + product_Barcode + ", product_Quantity=" + product_Quantity + ", product_image="
+				+ product_image + ", product_starratting=" + product_starratting + ", product_color=" + product_color
+				+ ", product_type=" + product_type + ", product_discount=" + product_discount + "]";
 	}
-
-	public Long getpId() {
-		return pId;
-	}
-
-	public void setpId(Long pId) {
-		this.pId = pId;
-	}
-
-	public String getpName() {
-		return pName;
-	}
-
-	public void setpName(String pName) {
-		this.pName = pName;
-	}
-
-	public String getpDescription() {
-		return pDescription;
-	}
-
-	public void setpDescription(String pDescription) {
-		this.pDescription = pDescription;
-	}
-
-	public double getpPrice() {
-		return pPrice;
-	}
-
-	public void setpPrice(double pPrice) {
-		this.pPrice = pPrice;
-	}
-
-	public String getpStatus() {
-		return pStatus;
-	}
-
-	public void setpStatus(String pStatus) {
-		this.pStatus = pStatus;
-	}
-
-	public long getpBarcode() {
-		return pBarcode;
-	}
-
-	public void setpBarcode(long pBarcode) {
-		this.pBarcode = pBarcode;
-	}
-
-	public int getpQuantity() {
-		return pQuantity;
-	}
-
-	public void setpQuantity(int pQuantity) {
-		this.pQuantity = pQuantity;
-	}
-
-	public String getpImage() {
-		return pImage;
-	}
-
-	public void setpImage(String pImage) {
-		this.pImage = pImage;
-	}
-
-	public String getP_Starratting() {
-		return p_Starratting;
-	}
-
-	public void setP_Starratting(String p_Starratting) {
-		this.p_Starratting = p_Starratting;
-	}
-
-	public String getP_color() {
-		return p_color;
-	}
-
-	public void setP_color(String p_color) {
-		this.p_color = p_color;
-	}
-
-	public String getP_Type() {
-		return p_Type;
-	}
-
-	public void setP_Type(String p_Type) {
-		this.p_Type = p_Type;
-	}
-
-	public double getP_discount() {
-		return p_discount;
-	}
-
-	public void setP_discount(double p_discount) {
-		this.p_discount = p_discount;
-	}
+	
+	
 	
 }
