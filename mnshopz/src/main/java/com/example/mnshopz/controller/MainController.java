@@ -1,7 +1,5 @@
 package com.example.mnshopz.controller;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.mnshopz.entity.Products;
 import com.example.mnshopz.service.CustomerService;
 import com.example.mnshopz.service.ProductsServiceImpl;
 import com.google.gson.Gson;
@@ -50,6 +47,51 @@ public class MainController {
 		return "viewProduct";
 	}
 	
+	@GetMapping("/viewProduct2")
+	public String products2() {
+		return "viewProduct2";
+	}
+	
+	@GetMapping("/viewProduct3")
+	public String products3() {
+		return "viewProduct3";
+	}
+	
+	@GetMapping("/viewProduct4")
+	public String products4() {
+		return "viewProduct4";
+	}
+	
+	@GetMapping("/viewProduct5")
+	public String products5() {
+		return "viewProduct5";
+	}
+	
+	@GetMapping("/viewProduct6")
+	public String products6() {
+		return "viewProduct6";
+	}
+	
+	@GetMapping("/viewProduct7")
+	public String products7() {
+		return "viewProduct7";
+	}
+	
+	@GetMapping("/viewProduct8")
+	public String products8() {
+		return "viewProduct8";
+	}
+	
+	@GetMapping("/viewProduct9")
+	public String products9() {
+		return "viewProduct9";
+	}
+	
+	@GetMapping("/addProduct")
+	public String addNewProduct() {
+		return "addProduct";
+	}
+	
 	@PostMapping("/newUser")
 	@ResponseBody
 	public String viewUser(@RequestBody Map<String,Object> userRegistration) {
@@ -66,6 +108,16 @@ public class MainController {
 		String result=new Gson().toJson(loginDetails);
 		return result;
 	}
+	
+	
+	@PostMapping("/addNewProducts")
+	@ResponseBody
+	public String addProducts(@RequestBody Map<String,Object> newProduct) {
+		logger.info("Hello"+newProduct);
+		String products=productService.setProducts(newProduct);
+		return products;
+		
+	}	
 	
 	@PostMapping("/products")
 	@ResponseBody
@@ -84,4 +136,6 @@ public class MainController {
 		}
 		return finalProducts;
 	}
+	
+	
 }

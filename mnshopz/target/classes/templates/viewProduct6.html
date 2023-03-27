@@ -6,8 +6,8 @@
 </head>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-      
+	rel="stylesheet">
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -146,7 +146,8 @@
 
 .prodBckwrdBtn {
 	position: absolute;
-	top: 767px; left : 783px;
+	top: 767px;
+	left: 783px;
 	width: 80px;
 	height: 50px;
 	background: #03433B 0% 0% no-repeat padding-box;
@@ -283,10 +284,10 @@
 .prodCircle4 {
 	position: absolute;
 	top: 316px;
-	left: 1182px;
+	left: 998px;
 	width: 31px;
 	height: 31px;
-	background: #F8D6CD;
+	background: #2C2C2C;
 	border: none;
 	border-radius: 50px;
 }
@@ -456,7 +457,8 @@
 	color: #FFFFFF;
 	opacity: 1;
 }
-.modal-dialog{
+
+.modal-dialog {
 	position: absolute;
 	top: 308px;
 	left: 676px;
@@ -464,7 +466,8 @@
 	height: 465px;
 	border-radius: 0px;
 }
-.modalHeading{
+
+.modalHeading {
 	position: absolute;
 	top: 25px;
 	left: 51px;
@@ -476,158 +479,170 @@
 	color: #03433B;
 	opacity: 1;
 }
-.prodPriceModal{
+
+.prodPriceModal {
 	position: absolute;
 	top: 64px;
 	left: 51px;
 	width: 98px;
 	height: 17px;
 	text-align: left;
-	font-size: 16px ;
+	font-size: 16px;
 	font-family: Arial;
 	letter-spacing: 0px;
 	color: #2C2C2C;
 	text-transform: capitalize;
 	opacity: 1;
 }
-.prodAmountModal{
+
+.prodAmountModal {
 	position: absolute;
 	top: 63px;
 	right: 50px;
 	width: 58px;
 	height: 18px;
 	text-align: left;
-	font-size :16px;
+	font-size: 16px;
 	font-family: Arial;
 	letter-spacing: 0px;
 	color: #2C2C2C;
 	opacity: 1;
 }
-.prodDeliveryFee{
+
+.prodDeliveryFee {
 	position: absolute;
 	top: 101px;
 	left: 51px;
 	width: 100px;
 	height: 18px;
 	text-align: left;
-	font-size :16px;
+	font-size: 16px;
 	font-family: Arial;
 	letter-spacing: 0px;
 	color: #2C2C2C;
 	opacity: 1;
 }
-.prodCharge{
+
+.prodCharge {
 	position: absolute;
 	top: 101px;
 	right: 25px;
 	width: 60px;
 	height: 18px;
 	text-align: left;
-	font-size :16px;
+	font-size: 16px;
 	font-family: Arial;
 	letter-spacing: 0px;
 	color: #2C2C2C;
 	opacity: 1;
 }
-.prodTotal{
+
+.prodTotal {
 	position: absolute;
 	top: 139px;
 	left: 51px;
 	width: 93px;
 	height: 17px;
 	text-align: left;
-	font-size :16px;
+	font-size: 16px;
 	font-family: Arial;
 	letter-spacing: 0px;
 	color: #2C2C2C;
 	opacity: 1;
 }
-.prodTotalAmt{
+
+.prodTotalAmt {
 	position: absolute;
 	top: 139px;
 	right: 51px;
 	width: 58px;
 	height: 18px;
 	text-align: left;
-	font-size :16px;
+	font-size: 16px;
 	font-family: Arial;
 	letter-spacing: 0px;
 	color: #2C2C2C;
 	opacity: 1;
 }
-.modal-body hr{
+
+.modal-body hr {
 	width: 400px;
-    margin-left: 34px;
-    margin-top: 171px;
+	margin-left: 34px;
+	margin-top: 171px;
 }
-.prodPayMethod{
+
+.prodPayMethod {
 	position: absolute;
 	top: 190px;
 	left: 51px;
 	width: 225px;
 	height: 22px;
 	text-align: left;
-	font-size :20px;
+	font-size: 20px;
 	font-family: Arial;
 	font-weight: bold;
 	letter-spacing: 0px;
 	color: #03433B;
 	opacity: 1;
 }
+
 .starRating {
 	position: absolute;
 	top: 254px;
 	left: 921px;
-	width:150px;
+	width: 150px;
 	cursor: pointer;
 }
+
 .material-icons {
-	color:#F26F20;
+	color: #F26F20;
 	font-size: 30px;
 }
-
 </style>
 <script>
-function open(){
-	
-	$.ajax({
-	    type : "POST",
-	    headers : {
-	      'Content-Type' : 'application/json'
-	    },
-	    crossDomain : true,
-	    url : "/home/products",
-	    success : function(data) {
-	    var products=JSON.parse(data);
-	    for (var i = 0; i <1; i++) {
-	    	
-	      var starRating = document.createElement('div');
-	      starRating.className = 'starRating';
-	      
-	      var fullStars = Math.floor(products["products"][0].product_starratting);
-	      var halfStars = Math.round((products["products"][0].product_starratting - fullStars) * 2);
-	      
-	      for (var j = 0; j < fullStars; j++) {
-	        var star = document.createElement('i');
-	        star.className = 'material-icons';
-	        star.textContent = 'star';
-	        starRating.appendChild(star);
-	      }
-	     
-	      for (var j = 0; j < 5 - (fullStars + halfStars); j++) {
-	        var emptyStar = document.createElement('i');
-	        emptyStar.className = 'material-icons';
-	        emptyStar.textContent = 'star_border';
-	        starRating.appendChild(emptyStar);
-	      }
-	      document.body.appendChild(starRating);
-	      
-	    }
-	    },
-	    error : function() {
-	    }
-	  });
-}
+	function open() {
+
+		$
+				.ajax({
+					type : "POST",
+					headers : {
+						'Content-Type' : 'application/json'
+					},
+					crossDomain : true,
+					url : "/home/products",
+					success : function(data) {
+						var products = JSON.parse(data);
+						for (var i = 0; i < 1; i++) {
+
+							var starRating = document.createElement('div');
+							starRating.className = 'starRating';
+
+							var fullStars = Math
+									.floor(products["products"][5].product_starratting);
+							var halfStars = Math
+									.round((products["products"][5].product_starratting - fullStars) * 2);
+
+							for (var j = 0; j < fullStars; j++) {
+								var star = document.createElement('i');
+								star.className = 'material-icons';
+								star.textContent = 'star';
+								starRating.appendChild(star);
+							}
+
+							for (var j = 0; j < 5 - (fullStars + halfStars); j++) {
+								var emptyStar = document.createElement('i');
+								emptyStar.className = 'material-icons';
+								emptyStar.textContent = 'star_border';
+								starRating.appendChild(emptyStar);
+							}
+							document.body.appendChild(starRating);
+
+						}
+					},
+					error : function() {
+					}
+				});
+	}
 </script>
 <body onload="open()">
 	<div class="content">
@@ -660,39 +675,35 @@ function open(){
 		</div>
 		<div class="content-image">
 			<a href=""> <img
-				src="https://m.media-amazon.com/images/I/71gvgMp9ITL._SX679_.jpg">
+				src="https://m.media-amazon.com/images/I/61ogPth2lzL._SX522_.jpg">
 			</a>
 		</div>
 		<button class="prodBckwrdBtn">
 			<i class="bi bi-arrow-right"></i>
 		</button>
 		<img class="prodimg1"
-			src="https://m.media-amazon.com/images/I/61E8h9hRG4L._SX679_.jpg">
+			src="https://m.media-amazon.com/images/I/51h5tiv8L1L._SS40_.jpg">
 		<img class="prodimg2"
-			src="https://m.media-amazon.com/images/I/61RW+xGGyxL._SX679_.jpg">
+			src="https://m.media-amazon.com/images/I/51BETo10tML._SS40_.jpg">
 		<img class="prodimg3"
-			src="https://m.media-amazon.com/images/I/818n3x-j4zS._SX679_.jpg">
+			src="https://m.media-amazon.com/images/I/41LEO9L-MqL._SS40_.jpg">
 		<img class="prodimg4"
-			src="https://m.media-amazon.com/images/I/71I9JAwojoS._SX679_.jpg">
+			src="https://m.media-amazon.com/images/I/41iZneK6JaL._SS40_.jpg">
 		<button class="prodfrwdBtn">
 			<i class="bi bi-arrow-left"></i>
 		</button>
 		<div class="prodTitle">
-			<h1>HP Victus Gaming Latest AMD Ryzen 5 5600H Processor 16.1
-				inch(40.9 cm) FHD Gaming Laptop (8GB AM/512GB SSD/4GB</h1>
+			<h1>HP All-in-One 12th Gen Intel Core i3-27inches/68.6 cm 8GB RAM/512GB SSD/FHD, Micro-Edge, Anti-Glare Display/Wireless Keyboard & Mouse</h1>
 		</div>
 		<p class="prodColor">
 			<b>Color: </b>
 		</p>
-		<button id="yellow" class="prodCircle1"></button>
-		<button id="black" class="prodCircle2"></button>
-		<button id="blue" class="prodCircle3"></button>
 		<button id="pink" class="prodCircle4"></button>
 		<p class="prodPrice">
 			<b>Price:</b>
 		</p>
 		<p class="prodCost">
-			<b><i class="bi bi-currency-rupee">45,600</i></b>
+			<b><i class="bi bi-currency-rupee">59,199</i></b>
 		</p>
 		<h6 class="prodDescTitel">
 			<b>Description</b>
@@ -702,31 +713,20 @@ function open(){
 		<button id="black" class="prodDescCircle3"></button>
 		<button id="black" class="prodDescCircle4"></button>
 		<div class="prodDesc1">
-			<h6>BUILT FOR PLAY – The Victus by HP 16.1 inch Gaming Laptop PC
-				has what you need to play: a powerful AMD processor and Radeon
-				graphics, an upgraded cooling system, a high-resolution, fast
-				display, and OMEN Gaming Hub.</h6>
+			<h6>Display & Graphics: 27" diagonal, FHD (1920 x 1080), IPS, three-sided micro-edge, anti-glare, 250 nits, 72% NTSC | Graphics:Intel UHD Graphics</h6>
 		</div>
 		<div class="prodDesc2">
-			<h6>NEXT-GEN GRAPHICS – Experience incredible visuals to elevate
-				all of your gameplay with an AMD Radeon RX 5500M graphics card
-				that’s equipped with 4 GB of GDDR6 dedicated memory and PCI Express
-				4.0 support for speedier data-transfers.</h6>
+			<h6>Other Features: Networking: Integrated 10/100/1000 GbE LAN, Realtek RTL8821CE-M 802.11a/b/g/n/ac (1x1) Wi-Fi and Bluetooth 4.2 combo|Keyboard: HP 710 White Wireless Keyboard and mouse combo</h6>
 		</div>
 		<div class="prodDesc3">
-			<h6>IMMERSIVE DISPLAY – Enjoy vibrant, crystal-clear images with
-				178-degree wide-viewing angles on this FHD (1920 x 1080) IPS,
-				micro-edge display; plus, this screen’s non-reflective and low-gloss
-				design means you’ll get less glare while outside in the sun or under
-				bright lights.</h6>
+			<h6>Operating System & Software : Windows 11 Home Single Language in S mode | Microsoft Office Home and Student 2021.</h6>
 		</div>
 		<div class="prodDesc4">
-			<h6>UNCOMPROMISING PERFORMANCE – This thin and light laptop
-				lacks nothing in power, packing the speedy 6-core AMD Ryzen 5 5600H
-				mobile processor and up to 4.2 GHz max boost clock.</h6>
+			<h6>Ports: 1 SuperSpeed USB Type-A 5Gbps signaling rate (Battery Charging 1.2); 1 headphone/microphone combo |1 SuperSpeed USB Type-A 5Gbps signaling rate; 2 USB 2.0 Type-A; 1 RJ-45|Expansion slots: 2 M.2 (1 for SSD, 1 for WLAN)</h6>
 		</div>
 		<button class="prodCart">Add to Cart</button>
-		<button class="prodBuy" data-bs-toggle="modal" data-bs-target="#buyModal">Buy Now</button>
+		<button class="prodBuy" data-bs-toggle="modal"
+			data-bs-target="#buyModal">Buy Now</button>
 		<div class="modal" id="buyModal" tabindex="-1"
 			aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -735,11 +735,11 @@ function open(){
 						<form>
 							<h3 class="modalHeading">Order Summary (1 item)</h3>
 							<p class="prodPriceModal">Original Price</p>
-							<p class="prodAmountModal">₹45,600</p>
+							<p class="prodAmountModal">₹59,199</p>
 							<p class="prodDeliveryFee">Delivery Fees</p>
-							<p class="prodCharge"> Free</p>
+							<p class="prodCharge">Free</p>
 							<p class="prodTotal">Total Amount</p>
-							<p class="prodTotalAmt">₹45,600</p>
+							<p class="prodTotalAmt">₹59,199</p>
 							<hr>
 							<h2 class="prodPayMethod">Select Payment Method</h2>
 							<select class="drpDown1">

@@ -401,9 +401,6 @@
 					alert("You are an Registred user please Login kindly")
 					window.location.href = "http://localhost:8080/home/login?";
 				}
-				
-				
-				 // handle the response
 			}
 		});
 	}
@@ -431,7 +428,7 @@
 				</a>
 			</div>
 			<div class="headerIcon4">
-				<a href="">
+				<a href="http://localhost:8080/home/addProduct">
 					<button id="button4">Add New</button>
 				</a>
 			</div>
@@ -484,7 +481,8 @@
 				<p id="addressTxt">
 					<b>Address</b>
 				</p>
-				<input type="text" id="address" name="c_address" required> <input
+				<input type="text" id="address" name="c_address" required> 
+				<input
 					type="submit" class="registerBtn" onclick="collect()"
 					value="Register">
 			</div>

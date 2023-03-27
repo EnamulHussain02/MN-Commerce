@@ -29,5 +29,27 @@ public class ProductsServiceImpl{
 		    return resultData;
 	}
 	
+	public String setProducts(Map<String,Object> products){
+		String productImage=(String) products.get("product_image");
+		String productColor=(String) products.get("product_color");
+		String productType=(String) products.get("product_type");
+		String productDiscount =(String) products.get("product_discount");
+		String productBarcode =(String) products.get("product_barcode");
+		String productDescription =(String) products.get("product_description");
+		String productName =(String) products.get("product_name");
+		String productPrice =(String) products.get("product_price");
+		String productQuantity =(String) products.get("product_quantity");
+		
+		int discount=Integer.parseInt(productDiscount);
+		int barcode=Integer.parseInt(productBarcode);
+		int price=Integer.parseInt(productPrice);
+		int quantity=Integer.parseInt(productQuantity);
+		
+		productsRepository.saveProduct(productImage,productColor,productType,discount,barcode,productDescription,productName,price,quantity);
+
+		return "Status"+"201";
+		
+	}
+	
 
 }
