@@ -1006,10 +1006,7 @@ function open(){
 	      productImage.className = 'prodImage'+i;
 	      productLink.appendChild(productImage);
 	      
-	  
-	      var imageElement = document.querySelector('.prodImage'+i);
-	      imageElement.onclick=openModal;
-	     
+	      
 	      var productName = document.createElement('p');
 	      productName.textContent = products["products"][i].product_name;
 	      productName.className = 'prodName'+i;
@@ -1057,19 +1054,13 @@ function open(){
 	      
 	      document.body.appendChild(productDiv);
 	      
-	      
 	    }
 	    },
 	    error : function() {
 	    }
 	  });
-	
 }
-function openModal() {
-    var modal = document.getElementById('myModal');
-      
-    modal.style.display = 'block';
-    }
+
 
 </script>
 
@@ -1103,7 +1094,7 @@ function openModal() {
 			</div>
 			<div class="headerIcon5">
 				<a href="http://localhost:8080/home/registration">
-					<button id="button5" >Register/Login</button>
+					<button id="button5" onclick=openRegister()>Register/Login</button>
 				</a>
 			</div>
 		</div>
@@ -1135,7 +1126,9 @@ function openModal() {
 				<ul class="dropdown-menu">
 					<li><a class="dropdown-item" href="#">Mobiles</a></li>
 					<li><a class="dropdown-item" href="#">Computer</a></li>
-					<li><a class="dropdown-item" href="#">Laptop</a></li>
+					<li><a class="dropdown-item" href="#">TV</a></li>
+					<li><a class="dropdown-item" href="#">Men's Fashion</a></li>
+					<li><a class="dropdown-item" href="#">Women's Fashion</a></li>
 				</ul>
 			</div>
 			<div class="dropdown" id="dropdown2">
@@ -1187,6 +1180,7 @@ function openModal() {
 					type="button" data-bs-toggle="dropdown" aria-expanded="false">
 					Color</button>
 				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="#">Red</a></li>
 					<li><a class="dropdown-item" href="#">Blue</a></li>
 					<li><a class="dropdown-item" href="#">Black</a></li>
 					<li><a class="dropdown-item" href="#">Green</a></li>
@@ -1209,16 +1203,28 @@ function openModal() {
 		<div class=content-text>
 			<h3>Recomended for You</h3>
 		</div>
-		<div class="modal" id="myModal" tabindex="-1"
-			aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-body">
-						<h3 class="modalHeading">You are not Logged In please Login</h3>						
-					</div>
-				</div>
-			</div>
-		</div>
+		
+
 	</div>
+<script>
+	function openRegister(){
+		var value;
+		$.ajax({
+			type : "POST",
+			headers : {
+			'Content-Type' : 'application/json'
+			},
+			crossDomain : true,
+			url : "/home/registration",
+			success : function(response) {
+				value=response;		
+				console.log(value);
+				},
+			error : function() {
+			}
+			});
+	}
+	
+</script>
 </body>
 </html>
