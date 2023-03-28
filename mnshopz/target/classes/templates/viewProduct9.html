@@ -684,9 +684,9 @@
 							starRating.className = 'starRating';
 
 							var fullStars = Math
-									.floor(products["products"][3].product_starratting);
+									.floor(products["products"][7].product_starratting);
 							var halfStars = Math
-									.round((products["products"][3].product_starratting - fullStars) * 2);
+									.round((products["products"][7].product_starratting - fullStars) * 2);
 
 							for (var j = 0; j < fullStars; j++) {
 								var star = document.createElement('i');
@@ -710,13 +710,13 @@
 				});
 	}
 	function toggleInput() {
-	    var select = document.querySelector(".drpDown1");
-	    var input = document.querySelector("#modal-text");
-	    if (select.value == "UPI ID") {
-	        input.disabled = false;
-	    } else {
-	        input.disabled = true;
-	    }
+		var select = document.querySelector(".drpDown1");
+		var input = document.querySelector("#modal-text");
+		if (select.value == "UPI ID") {
+			input.disabled = false;
+		} else {
+			input.disabled = true;
+		}
 	}
 </script>
 <body onload="open()">
@@ -751,25 +751,26 @@
 		</div>
 		<div class="content-image">
 			<a href=""> <img
-				src="https://m.media-amazon.com/images/I/616H5xrlc+L._UL1500_.jpg">
+				src="https://m.media-amazon.com/images/I/71WbatK7HVL._SX679_.jpg">
 			</a>
 		</div>
 		<button class="prodBckwrdBtn">
 			<i class="bi bi-arrow-right"></i>
 		</button>
 		<img class="prodimg1"
-			src="https://m.media-amazon.com/images/I/41OYsXZjKyL._SR38,50_.jpg">
+			src="https://m.media-amazon.com/images/I/71MiNDvwJ5L._SX679_.jpg">
 		<img class="prodimg2"
-			src="https://m.media-amazon.com/images/I/41Aajz5Hx2L._SR38,50_.jpg">
+			src="https://m.media-amazon.com/images/I/713DQPwuK9S._SX679_.jpg">
 		<img class="prodimg3"
-			src="https://m.media-amazon.com/images/I/41C7maKqTTL._SR38,50_.jpg">
+			src="https://m.media-amazon.com/images/I/713DQPwuK9S._SX679_.jpg">
 		<img class="prodimg4"
-			src="https://m.media-amazon.com/images/I/51rxBs02M-L._SR38,50_.jpg">
+			src="https://m.media-amazon.com/images/I/713DQPwuK9S._SX679_.jpg">
 		<button class="prodfrwdBtn">
 			<i class="bi bi-arrow-left"></i>
 		</button>
 		<div class="prodTitle">
-			<h1>BIBA Women's Pink Printed Silk Blend Unstitched Suit Set</h1>
+			<h1>Acer Aspire 5 A515-56 Thin and Light Laptop | 15.6" Full HD
+				Display | 11th Gen Intel Core i5-1135G7 Processor</h1>
 		</div>
 		<p class="prodColor">
 			<b>Color: </b>
@@ -779,7 +780,7 @@
 			<b>Price:</b>
 		</p>
 		<p class="prodCost">
-			<b><i class="bi bi-currency-rupee">999</i></b>
+			<b><i class="bi bi-currency-rupee">61,990</i></b>
 		</p>
 		<h6 class="prodDescTitel">
 			<b>Description</b>
@@ -789,16 +790,22 @@
 		<button id="black" class="prodDescCircle3"></button>
 		<button id="black" class="prodDescCircle4"></button>
 		<div class="prodDesc1">
-			<h6>Indulge in elegance with the BIBA Women's Pink Printed Silk Blend Unstitched Suit Set.</h6>
+			<h6>This Aspire 11th gen i5 laptop packs a lot of power into the
+				chassis. It houses a powerful i5 11th Generation processor and 8 GB
+				RAM upgradable up to 20GB. It houses a powerful i5 11th Generation processor and 8 GB RAM.</h6>
 		</div>
 		<div class="prodDesc2">
-			<h6>Crafted from a luxurious silk blend, this unstitched suit set boasts a stunning digital print in a placement pattern featuring a beautifully arranged floral design</h6>
+			<h6>An ideal budget i5 laptop under 60000 for students coming
+				with 512GB SSD storage resulting in fast performance.</h6>
 		</div>
 		<div class="prodDesc3">
-			<h6> Make a bold statement with this uniquely designed suit set, adding a touch of femininity to your wardrobe for an enigmatic look. Experience comfort and style in one with this must-have addition to your wardrobe.</h6>
+			<h6>The latest Aspire 5 2021 i5 laptop has been designed and
+				certified to work with Cortana.</h6>
 		</div>
 		<div class="prodDesc4">
-			<h6> Make a bold statement with this uniquely designed suit set, adding a touch of femininity to your wardrobe for an enigmatic look. Experience comfort and style in one with this must-have addition to your wardrobe.</h6>
+			<h6>The Aspire 5 i5 laptop also offers battery life of upto 10
+				hours and comes with pre installed Windows 10 Home 64 bit and
+				Microsoft office 2019</h6>
 		</div>
 		<button class="prodCart">Add to Cart</button>
 		<button class="prodBuy" data-bs-toggle="modal"
@@ -811,20 +818,23 @@
 						<form>
 							<h3 class="modalHeading">Order Summary (1 item)</h3>
 							<p class="prodPriceModal">Original Price</p>
-							<p class="prodAmountModal">₹999</p>
+							<p class="prodAmountModal">₹1,599</p>
 							<p class="prodDeliveryFee">Delivery Fees</p>
 							<p class="prodCharge">Free</p>
 							<p class="prodTotal">Total Amount</p>
-							<p class="prodTotalAmt">₹999</p>
+							<p class="prodTotalAmt">₹1,599</p>
 							<hr>
 							<h2 class="prodPayMethod">Select Payment Method</h2>
 							<select class="drpDown1" onchange="toggleInput()">
-							    <option  class="option1" style="background: white; color: black;" value="UPI ID" >UPI ID</option>
-							    <option  style="background: white; color: black;" value="" selected>CASH</option>
+								<option class="option1" style="background: white; color: black;"
+									value="UPI ID">UPI ID</option>
+								<option style="background: white; color: black;" value=""
+									selected>CASH</option>
 							</select>
 							<p class="p-modal-body">UPI ID</p>
-							<input id="modal-text" type="text" placeholder="Enter Your UPI-Id" disabled></input>
-		
+							<input id="modal-text" type="text"
+								placeholder="Enter Your UPI-Id" disabled></input>
+
 						</form>
 						<button type="button" id="modal-cancel-btn"
 							class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

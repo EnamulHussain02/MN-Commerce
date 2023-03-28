@@ -44,14 +44,17 @@
 	z-index: 30;
 }
 
-#image1 {
-	width: 184px;
+
+	#image1 {
 	position: absolute;
-	height: 100px;
+	top: 29px;
+	width: 184px;
+	height: 42px;
 	left: 258px;
-	border: 2px solid #03433B;
+	border: none;
 	opacity: 1;
 }
+
 
 .rightHeader {
 	display: flex;
@@ -366,7 +369,6 @@
 					window.location.href="http://localhost:8080/home/landing";
 				}
 				else{
-					alert("You are logged in successfully");
 					window.location.href="http://localhost:8080/home/landing";
 				}
 					
@@ -380,16 +382,17 @@
 <body>
 	<div class="content">
 		<div class="header1">
-			<img id="image1"
-				src="https://storage.googleapis.com/smco-web-static-assets/TraineeProject/MNshopzz_logo.png">
-
+			<a href="http://localhost:8080/home/landing">
+				<img id="image1"
+					src="https://storage.googleapis.com/smco-web-static-assets/TraineeProject/MnShopz-Logo.jpg">
+			</a>
 			<div class="headerIcon1">
 				<a href="">
 					<button id="button1">About</button>
 				</a>
 			</div>
 			<div class="headerIcon2">
-				<a href="">
+				<a href="http://localhost:8080/home/landing">
 					<button id="button2">Products</button>
 				</a>
 			</div>

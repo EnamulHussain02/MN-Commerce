@@ -54,11 +54,12 @@
 }
 
 #image1 {
-	width: 184px;
 	position: absolute;
-	height: 100px;
+	top: 29px;
+	width: 184px;
+	height: 42px;
 	left: 258px;
-	border: 2px solid #03433B;
+	border: none;
 	opacity: 1;
 }
 
@@ -989,6 +990,7 @@ function open(){
 	    url : "/home/products",
 	    success : function(data) {
 	    var products=JSON.parse(data);
+	    console.log(products["products"]);
 	    for (var i = 0; i < products["products"].length; i++) {
 	    
 	      var productDiv = document.createElement('div');
@@ -1004,7 +1006,10 @@ function open(){
 	      productImage.className = 'prodImage'+i;
 	      productLink.appendChild(productImage);
 	      
-	      
+	  
+	      var imageElement = document.querySelector('.prodImage'+i);
+	      imageElement.onclick=openModal;
+	     
 	      var productName = document.createElement('p');
 	      productName.textContent = products["products"][i].product_name;
 	      productName.className = 'prodName'+i;
@@ -1052,13 +1057,19 @@ function open(){
 	      
 	      document.body.appendChild(productDiv);
 	      
+	      
 	    }
 	    },
 	    error : function() {
 	    }
 	  });
+	
 }
-
+function openModal() {
+    var modal = document.getElementById('myModal');
+      
+    modal.style.display = 'block';
+    }
 
 </script>
 
@@ -1067,17 +1078,16 @@ function open(){
 <body onload="open()">
 	<div class="container1">
 		<div class="header1">
-
-			<!-- <img id="image1"
-				src="https://storage.googleapis.com/smco-web-static-assets/TraineeProject/MNshopzz_logo.png"> -->
+			<a href="http://localhost:8080/home/landing">
+				<img id="image1"
+					src="https://storage.googleapis.com/smco-web-static-assets/TraineeProject/MnShopz-Logo.jpg">
+			</a>
 
 			<div class="headerIcon1">
-				<a href="">
 					<button id="button1">About</button>
-				</a>
 			</div>
 			<div class="headerIcon2">
-				<a href="">
+				<a href="http://localhost:8080/home/landing">
 					<button id="button2">Products</button>
 				</a>
 			</div>
@@ -1093,7 +1103,7 @@ function open(){
 			</div>
 			<div class="headerIcon5">
 				<a href="http://localhost:8080/home/registration">
-					<button id="button5" onclick=openRegister()>Register/Login</button>
+					<button id="button5" >Register/Login</button>
 				</a>
 			</div>
 		</div>
@@ -1125,9 +1135,7 @@ function open(){
 				<ul class="dropdown-menu">
 					<li><a class="dropdown-item" href="#">Mobiles</a></li>
 					<li><a class="dropdown-item" href="#">Computer</a></li>
-					<li><a class="dropdown-item" href="#">TV</a></li>
-					<li><a class="dropdown-item" href="#">Men's Fashion</a></li>
-					<li><a class="dropdown-item" href="#">Women's Fashion</a></li>
+					<li><a class="dropdown-item" href="#">Laptop</a></li>
 				</ul>
 			</div>
 			<div class="dropdown" id="dropdown2">
@@ -1179,7 +1187,6 @@ function open(){
 					type="button" data-bs-toggle="dropdown" aria-expanded="false">
 					Color</button>
 				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="#">Red</a></li>
 					<li><a class="dropdown-item" href="#">Blue</a></li>
 					<li><a class="dropdown-item" href="#">Black</a></li>
 					<li><a class="dropdown-item" href="#">Green</a></li>
@@ -1202,28 +1209,16 @@ function open(){
 		<div class=content-text>
 			<h3>Recomended for You</h3>
 		</div>
-		
-
+		<div class="modal" id="myModal" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<h3 class="modalHeading">You are not Logged In please Login</h3>						
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-<script>
-	function openRegister(){
-		var value;
-		$.ajax({
-			type : "POST",
-			headers : {
-			'Content-Type' : 'application/json'
-			},
-			crossDomain : true,
-			url : "/home/registration",
-			success : function(response) {
-				value=response;		
-				console.log(value);
-				},
-			error : function() {
-			}
-			});
-	}
-	
-</script>
 </body>
 </html>

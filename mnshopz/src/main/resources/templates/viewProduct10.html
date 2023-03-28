@@ -6,8 +6,8 @@
 </head>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-
+      rel="stylesheet">
+      
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -18,7 +18,7 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
 	integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
 	crossorigin="anonymous">
-	
+
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
@@ -26,7 +26,6 @@
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
 
 <style>
 .content {
@@ -666,59 +665,57 @@
 
 </style>
 <script>
-	function open() {
-
-		$
-				.ajax({
-					type : "POST",
-					headers : {
-						'Content-Type' : 'application/json'
-					},
-					crossDomain : true,
-					url : "/home/products",
-					success : function(data) {
-						var products = JSON.parse(data);
-						for (var i = 0; i < 1; i++) {
-
-							var starRating = document.createElement('div');
-							starRating.className = 'starRating';
-
-							var fullStars = Math
-									.floor(products["products"][3].product_starratting);
-							var halfStars = Math
-									.round((products["products"][3].product_starratting - fullStars) * 2);
-
-							for (var j = 0; j < fullStars; j++) {
-								var star = document.createElement('i');
-								star.className = 'material-icons';
-								star.textContent = 'star';
-								starRating.appendChild(star);
-							}
-
-							for (var j = 0; j < 5 - (fullStars + halfStars); j++) {
-								var emptyStar = document.createElement('i');
-								emptyStar.className = 'material-icons';
-								emptyStar.textContent = 'star_border';
-								starRating.appendChild(emptyStar);
-							}
-							document.body.appendChild(starRating);
-
-						}
-					},
-					error : function() {
-					}
-				});
-	}
-	function toggleInput() {
-	    var select = document.querySelector(".drpDown1");
-	    var input = document.querySelector("#modal-text");
-	    if (select.value == "UPI ID") {
-	        input.disabled = false;
-	    } else {
-	        input.disabled = true;
+function open(){
+	
+	$.ajax({
+	    type : "POST",
+	    headers : {
+	      'Content-Type' : 'application/json'
+	    },
+	    crossDomain : true,
+	    url : "/home/products",
+	    success : function(data) {
+	    var products=JSON.parse(data);
+	    for (var i = 0; i <1; i++) {
+	    	
+	      var starRating = document.createElement('div');
+	      starRating.className = 'starRating';
+	      
+	      var fullStars = Math.floor(products["products"][0].product_starratting);
+	      var halfStars = Math.round((products["products"][0].product_starratting - fullStars) * 2);
+	      
+	      for (var j = 0; j < fullStars; j++) {
+	        var star = document.createElement('i');
+	        star.className = 'material-icons';
+	        star.textContent = 'star';
+	        starRating.appendChild(star);
+	      }
+	     
+	      for (var j = 0; j < 5 - (fullStars + halfStars); j++) {
+	        var emptyStar = document.createElement('i');
+	        emptyStar.className = 'material-icons';
+	        emptyStar.textContent = 'star_border';
+	        starRating.appendChild(emptyStar);
+	      }
+	      document.body.appendChild(starRating);
+	      
 	    }
-	}
+	    },
+	    error : function() {
+	    }
+	  });
+}
+function toggleInput() {
+    var select = document.querySelector(".drpDown1");
+    var input = document.querySelector("#modal-text");
+    if (select.value == "UPI ID") {
+        input.disabled = false;
+    } else {
+        input.disabled = true;
+    }
+}
 </script>
+
 <body onload="open()">
 	<div class="content">
 		<div class="header1">
@@ -751,35 +748,38 @@
 		</div>
 		<div class="content-image">
 			<a href=""> <img
-				src="https://m.media-amazon.com/images/I/616H5xrlc+L._UL1500_.jpg">
+				src="https://m.media-amazon.com/images/I/81ZZPvIWnYL._SX679_.jpg">
 			</a>
 		</div>
 		<button class="prodBckwrdBtn">
 			<i class="bi bi-arrow-right"></i>
 		</button>
 		<img class="prodimg1"
-			src="https://m.media-amazon.com/images/I/41OYsXZjKyL._SR38,50_.jpg">
+			src="https://m.media-amazon.com/images/I/71+bZ7h-7uL._SX679_.jpg">
 		<img class="prodimg2"
-			src="https://m.media-amazon.com/images/I/41Aajz5Hx2L._SR38,50_.jpg">
+			src="https://m.media-amazon.com/images/I/51XmUa63yML._SX679_.jpg">
 		<img class="prodimg3"
-			src="https://m.media-amazon.com/images/I/41C7maKqTTL._SR38,50_.jpg">
+			src="https://m.media-amazon.com/images/I/41EzF4CKYbL._SX679_.jpg">
 		<img class="prodimg4"
-			src="https://m.media-amazon.com/images/I/51rxBs02M-L._SR38,50_.jpg">
+			src="https://m.media-amazon.com/images/I/41EzF4CKYbL._SX679_.jpg">
 		<button class="prodfrwdBtn">
 			<i class="bi bi-arrow-left"></i>
 		</button>
 		<div class="prodTitle">
-			<h1>BIBA Women's Pink Printed Silk Blend Unstitched Suit Set</h1>
+			<h1>Redmi Note 12 5G Matte Black 6GB RAM 128GB ROM | 1st Phone with 120Hz Super AMOLED</h1>
 		</div>
 		<p class="prodColor">
 			<b>Color: </b>
 		</p>
+		<button id="yellow" class="prodCircle1"></button>
+		<button id="black" class="prodCircle2"></button>
+		<button id="blue" class="prodCircle3"></button>
 		<button id="pink" class="prodCircle4"></button>
 		<p class="prodPrice">
 			<b>Price:</b>
 		</p>
 		<p class="prodCost">
-			<b><i class="bi bi-currency-rupee">999</i></b>
+			<b><i class="bi bi-currency-rupee">19,999</i></b>
 		</p>
 		<h6 class="prodDescTitel">
 			<b>Description</b>
@@ -789,20 +789,19 @@
 		<button id="black" class="prodDescCircle3"></button>
 		<button id="black" class="prodDescCircle4"></button>
 		<div class="prodDesc1">
-			<h6>Indulge in elegance with the BIBA Women's Pink Printed Silk Blend Unstitched Suit Set.</h6>
+			<h6>Display: Super AMOLED (1080x2400) Display with 120Hz Refresh rate; 1200nits peak brightness; 240Hz Touch sampling rate.</h6>
 		</div>
 		<div class="prodDesc2">
-			<h6>Crafted from a luxurious silk blend, this unstitched suit set boasts a stunning digital print in a placement pattern featuring a beautifully arranged floral design</h6>
+			<h6>Processor: Snapdragon 4 Gen1 6nm Octa-core 5G processor for high performance and efficiency with Adreno 619 GPU; Up to 2.0GHz.</h6>
 		</div>
 		<div class="prodDesc3">
-			<h6> Make a bold statement with this uniquely designed suit set, adding a touch of femininity to your wardrobe for an enigmatic look. Experience comfort and style in one with this must-have addition to your wardrobe.</h6>
+			<h6>Camera: 48MP AI Triple camera setup with 8MP Ultra Wide sensor and 2MP Macro camera| 13MP Front camera.</h6>
 		</div>
 		<div class="prodDesc4">
-			<h6> Make a bold statement with this uniquely designed suit set, adding a touch of femininity to your wardrobe for an enigmatic look. Experience comfort and style in one with this must-have addition to your wardrobe.</h6>
+			<h6>Battery: 5000mAh large battery with 33W fast charger in-box and Type-C connectivity.</h6>
 		</div>
 		<button class="prodCart">Add to Cart</button>
-		<button class="prodBuy" data-bs-toggle="modal"
-			data-bs-target="#buyModal">Buy Now</button>
+		<button class="prodBuy" data-bs-toggle="modal" data-bs-target="#buyModal">Buy Now</button>
 		<div class="modal" id="buyModal" tabindex="-1"
 			aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -811,13 +810,14 @@
 						<form>
 							<h3 class="modalHeading">Order Summary (1 item)</h3>
 							<p class="prodPriceModal">Original Price</p>
-							<p class="prodAmountModal">₹999</p>
+							<p class="prodAmountModal">₹19,999</p>
 							<p class="prodDeliveryFee">Delivery Fees</p>
-							<p class="prodCharge">Free</p>
+							<p class="prodCharge"> Free</p>
 							<p class="prodTotal">Total Amount</p>
-							<p class="prodTotalAmt">₹999</p>
+							<p class="prodTotalAmt">₹19,999</p>
 							<hr>
 							<h2 class="prodPayMethod">Select Payment Method</h2>
+							
 							<select class="drpDown1" onchange="toggleInput()">
 							    <option  class="option1" style="background: white; color: black;" value="UPI ID" >UPI ID</option>
 							    <option  style="background: white; color: black;" value="" selected>CASH</option>
@@ -828,7 +828,8 @@
 						</form>
 						<button type="button" id="modal-cancel-btn"
 							class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<button id="modal-confirm-btn" data-bs-toggle="modal">Confirm</button>
+						<button id="modal-confirm-btn" 
+										data-bs-toggle="modal">Confirm</button>
 					</div>
 				</div>
 			</div>
