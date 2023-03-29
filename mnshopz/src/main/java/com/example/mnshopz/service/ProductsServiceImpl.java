@@ -51,5 +51,16 @@ public class ProductsServiceImpl{
 		
 	}
 	
+	public Map<String, Object> getProduct(Map<String, Object> products)
+	{
+		String prodId=(String) products.get("prodId");
+		Long productId=Long.valueOf(prodId);
+		logger.info(prodId);
+		List<Map<String,Object>> resultProducts=productsRepository.getProductDetail(productId);
+		Map<String, Object> result= new HashMap<>();
+		result.put("product", resultProducts);
+		logger.info("product"+result);
+		return result;
+	}
 
 }

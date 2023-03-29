@@ -52,6 +52,105 @@ public class Products {
 	
 	@Column(name="product_discount")
 	private double product_discount;
+	
+	@Column(name="prodDesc1")
+	private String prodDesc1;
+	
+	@Column(name="prodDesc2")
+	private String prodDesc2;
+	
+	@Column(name="prodDesc3")
+	private String prodDesc3;
+	
+	@Column(name="prodDesc4")
+	private String prodDesc4;
+	
+	@Column(name="image1")
+	private String image1;
+	
+	@Column(name="image2")
+	private String image2;
+	
+	@Column(name="image3")
+	private String image3;
+	
+	@Column(name="image4")
+	private String image4;
+	
+	@Column(name="prodTitel")
+	private String prodTitel;
+
+	public String getProdDesc1() {
+		return prodDesc1;
+	}
+
+	public void setProdDesc1(String prodDesc1) {
+		this.prodDesc1 = prodDesc1;
+	}
+
+	public String getProdDesc2() {
+		return prodDesc2;
+	}
+
+	public void setProdDesc2(String prodDesc2) {
+		this.prodDesc2 = prodDesc2;
+	}
+
+	public String getProdDesc3() {
+		return prodDesc3;
+	}
+
+	public void setProdDesc3(String prodDesc3) {
+		this.prodDesc3 = prodDesc3;
+	}
+
+	public String getProdDesc4() {
+		return prodDesc4;
+	}
+
+	public void setProdDesc4(String prodDesc4) {
+		this.prodDesc4 = prodDesc4;
+	}
+
+	public String getImage1() {
+		return image1;
+	}
+
+	public void setImage1(String image1) {
+		this.image1 = image1;
+	}
+
+	public String getImage2() {
+		return image2;
+	}
+
+	public void setImage2(String image2) {
+		this.image2 = image2;
+	}
+
+	public String getImage3() {
+		return image3;
+	}
+
+	public void setImage3(String image3) {
+		this.image3 = image3;
+	}
+
+	public String getImage4() {
+		return image4;
+	}
+
+	public void setImage4(String image4) {
+		this.image4 = image4;
+	}
+
+	public String getProdTitel() {
+		return prodTitel;
+	}
+
+	public void setProdTitel(String prodTitel) {
+		this.prodTitel = prodTitel;
+	}
 
 	public Long getProduct_Id() {
 		return product_Id;
@@ -149,14 +248,19 @@ public class Products {
 		this.product_discount = product_discount;
 	}
 
-	@Override
-	public String toString() {
-		return "Products [product_Id=" + product_Id + ", product_Name=" + product_Name + ", product_Description="
-				+ product_Description + ", product_Price=" + product_Price + ", product_Status=" + product_Status
-				+ ", product_Barcode=" + product_Barcode + ", product_Quantity=" + product_Quantity + ", product_image="
-				+ product_image + ", product_starratting=" + product_starratting + ", product_color=" + product_color
-				+ ", product_type=" + product_type + ", product_discount=" + product_discount + "]";
-	}
+	/*
+	 * @Override public String toString() { return "Products [product_Id=" +
+	 * product_Id + ", product_Name=" + product_Name + ", product_Description=" +
+	 * product_Description + ", product_Price=" + product_Price +
+	 * ", product_Status=" + product_Status + ", product_Barcode=" + product_Barcode
+	 * + ", product_Quantity=" + product_Quantity + ", product_image=" +
+	 * product_image + ", product_starratting=" + product_starratting +
+	 * ", product_color=" + product_color + ", product_type=" + product_type +
+	 * ", product_discount=" + product_discount + ", prodDesc1=" + prodDesc1 +
+	 * ", prodDesc2=" + prodDesc2 + ", prodDesc3=" + prodDesc3 + ", prodDesc4=" +
+	 * prodDesc4 + ", image1=" + image1 + ", image2=" + image2 + ", image3=" +
+	 * image3 + ", image4=" + image4 + ", prodTitel=" + prodTitel + "]"; }
+	 */
 	
 	
 	
