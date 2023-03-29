@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+	integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+	crossorigin="anonymous">
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+	crossorigin="anonymous"></script>
+
+
+<style type="text/css">
+.content {
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+}
+
+.header1 {
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+	background: #FFFFFF 0% 0% no-repeat padding-box;
+	box-shadow: 0px 3px 6px #03433b39;
+	opacity: 1;
+	position: fixed;
+	z-index: 30;
+}
+
+
+	#image1 {
+	position: absolute;
+	top: 29px;
+	width: 184px;
+	height: 42px;
+	left: 258px;
+	border: none;
+	opacity: 1;
+}
+
+
+.rightHeader {
+	display: flex;
+	margin-right: 0px;
+}
+
+.headerIcon1 {
+	position: absolute;
+	top: 39px;
+	left: 892px;
+	width: 52px;
+	height: 22px;
+}
+
+.headerIcon2 {
+	position: absolute;
+	top: 39px;
+	left: 1017px;
+	width: 79px;
+	height: 22px;
+}
+
+.headerIcon3 {
+	position: absolute;
+	top: 39px;
+	left: 1169px;
+	width: 131px;
+	height: 22px;
+}
+
+.headerIcon4 {
+	position: absolute;
+	top: 39px;
+	left: 1360px;
+	width: 95px;
+	height: 22px;
+}
+
+.headerIcon5 {
+	position: absolute;
+	top: 25px;
+	left: 1496px;
+	right: 223px;
+	width: 201px;
+	height: 50px;
+	border: none;
+	border: 25px;
+}
+
+#button1 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button2 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button3 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button4 {
+	border: none;
+	background: none;
+	font-size: 20px;
+	font-family: Arial;
+	color: #2C2C2C;
+}
+
+#button5 {
+	border-radius: 25px;
+	background-color: #03433B;
+	left: 1532px;
+	top: 39px;
+	width: 201px;
+	height: 50px;
+	font-size: 20px;
+	font-family: Arial;
+	color: #FFFFFF;
+}
+.order-heading{
+	position: absolute;
+	top: 123px;
+	left: 279px;
+	width: 92px;
+	height: 31px;
+	text-align: left;
+	font-weight: bold;
+	font-size: 28px;
+	font-family: Arial;
+	letter-spacing: 0px;
+	color: #2C2C2C;
+	opacity: 1;
+}
+.order{
+	position: absolute;
+	top: 174px;
+	left: 279px;
+	width: 1438px;
+	height: 585px;
+	background: #FFFFFF;
+	border: 1px solid #03433B;
+	opacity: 1;
+}
+.orderInner10{
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	width: 1436px;
+	height: 80px;
+	background: #BEDBD7;
+	opacity: 1;
+}
+.order-no0{
+	position: absolute;
+	top: 29px;
+	left: 38px;
+	width: 364px;
+	height: 22px;
+	text-align: left;
+	font-size: 20px;
+	font-family: Arial;
+	letter-spacing: 0px;
+	color: #2C2C2C;
+	opacity: 1;
+}
+.payment0{
+	position: absolute;
+	top: 29px;
+	left: 1174px;
+	width: 235px;
+	height: 22px;
+	text-align: left;
+	font-size: 20px;
+	font-family: Arial;
+	letter-spacing: 0px;
+	color: #2C2C2C;
+	opacity: 1;
+}
+.prodImage0{
+	position: absolute;
+	top: 116px;
+	left: 39px;
+	width: 142px;
+	height: 142px;
+}
+.prodName0{
+	position: absolute;
+	top: 116px;
+	left: 201px;
+	width: 798px;
+	height: 54px;
+	text-align: left;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: Arial;
+	letter-spacing: 0px;
+	color: #2C2C2C;
+	opacity: 1;
+}
+.prodDesc0{
+	position: absolute;
+	top: 186px;
+	left: 201px;
+	width: 773px;
+	height: 50px;
+	text-align: left;
+	font-size: 16px;
+	font-family: Arial;
+	letter-spacing: 0px;
+	color: #2C2C2C;
+	opacity: 1;
+}
+.prodPrice0{
+	position: absolute;
+	top: 116px;
+	left: 1336px;
+	text-align: left;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: Arial;
+	letter-spacing: 0px;
+	color: #2C2C2C;
+	opacity: 1;
+}
+</style>
+<script>
+function open(){
+	
+	$.ajax({
+	    type : "POST",
+	    headers : {
+	      'Content-Type' : 'application/json'
+	    },
+	    crossDomain : true,
+	    url : "/home/orders",
+	    success : function(data) {
+	    var orders=JSON.parse(data);
+	    console.log(orders["orders"]);
+	    var orderDiv = document.createElement('div');
+	    orderDiv.className = 'order';
+	    for (var i = 0; i < orders["orders"].length; i++) {
+	    
+	      
+	      
+	      var orderInnerHeading= document.createElement('div');
+	      orderInnerHeading.className='orderInner1'+i;
+	      
+	      var orderHeading= document.createElement('p');
+	      orderHeading.className='order-heading';
+	      orderHeading.innerText="Orders";
+	      
+	      var orderId=document.createElement('p');
+	      orderId.textContent='Order Number:#'+orders["orders"][i].o_id;
+	      orderId.className='order-no'+i;
+	      
+	      var paymentDate=document.createElement('p')
+	      paymentDate.textContent='Date:'+orders["orders"][i].payment_date;
+	      paymentDate.className='payment'+i;
+	      
+	      var productImage = document.createElement('img');
+	      productImage.src = orders["orders"][i].product_image;
+	      productImage.className = 'prodImage'+i;
+	     
+	      var productName = document.createElement('p');
+	      productName.textContent = orders["orders"][i].product_name;
+	      productName.className = 'prodName'+i;
+
+	      var productDescription = document.createElement('p');
+	      productDescription.textContent = orders["orders"][i].product_description;
+	      productDescription.className = 'prodDesc'+i;
+
+	      var productPrice = document.createElement('p');
+	      productPrice.innerText = '₹'+orders["orders"][i].total;
+	      productPrice.className = 'prodPrice'+i;
+	      
+	      orderDiv.appendChild(orderInnerHeading);
+	      orderInnerHeading.appendChild(orderId);
+	      orderInnerHeading.appendChild(paymentDate);
+	      
+	      orderDiv.appendChild(productName);
+	      orderDiv.appendChild(productDescription);
+	      orderDiv.appendChild(productPrice);
+	      orderDiv.appendChild(productImage);
+	      
+	      document.body.appendChild(orderHeading);
+	      document.body.appendChild(orderDiv);
+	      
+	      
+	    }
+	    },
+	    error : function() {
+	    }
+	  });
+	
+}
+</script>
+<body onload="open()">
+<div class="content">
+		<div class="header1">
+			<a href="http://localhost:8080/home/landing">
+				<img id="image1"
+					src="https://storage.googleapis.com/smco-web-static-assets/TraineeProject/MnShopz-Logo.jpg">
+			</a>
+			<div class="headerIcon1">
+				<a href="">
+					<button id="button1">About</button>
+				</a>
+			</div>
+			<div class="headerIcon2">
+				<a href="http://localhost:8080/home/landing">
+					<button id="button2">Products</button>
+				</a>
+			</div>
+			<div class="headerIcon3">
+				<a href="">
+					<button id="button3">Order History</button>
+				</a>
+			</div>
+			<div class="headerIcon4">
+				<a href="http://localhost:8080/home/addProduct">
+					<button id="button4">Add New</button>
+				</a>
+			</div>
+			<div class="headerIcon5">
+				<a href="http://localhost:8080/home/registration">
+					<button id="button5">Register/Login</button>
+				</a>
+			</div>
+		</div>
+</div>
+</body>
+</head>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.mnshopz.service.CustomerService;
+import com.example.mnshopz.service.OrderService;
 import com.example.mnshopz.service.ProductsServiceImpl;
 import com.google.gson.Gson;
 
@@ -26,10 +27,19 @@ public class MainController {
 	@Autowired
 	ProductsServiceImpl productService;
 	
+	@Autowired
+	OrderService orderService;
+	
 	@GetMapping("/landing")
 	public String landing() 
 	{
 		return "landing";
+	}
+	
+	@GetMapping("/logLanding")
+	public String LogLAnding() {
+		
+		return "landinglgin";
 	}
 	
 	@GetMapping("/registration")
@@ -47,49 +57,19 @@ public class MainController {
 		return "viewProduct";
 	}
 	
-	@GetMapping("/viewProduct2")
-	public String products2() {
-		return "viewProduct2";
+	@GetMapping("/viewOrder")
+	public String viewOrders() {
+		return "showOrder";
 	}
 	
-	@GetMapping("/viewProduct3")
-	public String products3() {
-		return "viewProduct3";
-	}
-	
-	@GetMapping("/viewProduct4")
-	public String products4() {
-		return "viewProduct4";
-	}
-	
-	@GetMapping("/viewProduct5")
-	public String products5() {
-		return "viewProduct5";
-	}
-	
-	@GetMapping("/viewProduct6")
-	public String products6() {
-		return "viewProduct6";
-	}
-	
-	@GetMapping("/viewProduct7")
-	public String products7() {
-		return "viewProduct7";
-	}
-	
-	@GetMapping("/viewProduct8")
-	public String products8() {
-		return "viewProduct8";
-	}
-	
-	@GetMapping("/viewProduct9")
-	public String products9() {
-		return "viewProduct9";
-	}
-	
-	@GetMapping("/addProduct")
-	public String addNewProduct() {
-		return "addProduct";
+	@PostMapping("/sendProduct")
+	@ResponseBody
+	public String sendProduct(@RequestBody Map<String,Object> product)
+	{
+		Map<String,Object> receivedData= productService.getProduct(product);
+		String productData=new Gson().toJson(receivedData);
+		logger.info(productData);
+		return productData;
 	}
 	
 	@PostMapping("/newUser")
@@ -135,6 +115,14 @@ public class MainController {
 			logger.info("Error is"+e);
 		}
 		return finalProducts;
+	}
+	
+	@PostMapping("/orders")
+	@ResponseBody
+	public String sendOrders() {
+		Map<String, Object> result=orderService.orderDetails();
+		String orderData = new Gson().toJson(result);
+		return orderData;
 	}
 	
 	

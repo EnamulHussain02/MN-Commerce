@@ -996,8 +996,16 @@ function open(){
 	      var productDiv = document.createElement('div');
 	      productDiv.className = 'product'+i;
 	      
+	      var productName = document.createElement('p');
+	      productName.innerText = products["products"][i].product_name;
+	      productName.className = 'prodName'+i;
+	      productName.setAttribute("id","productName"+i);
+	      
+	      var sendId=  products["products"][i].product_id;
+	      
+	      
 	      var productLink = document.createElement('a'); 
-	      productLink.href = products["products"][i].product_htmllink; 
+	      productLink.href = "http://localhost:8080/home/viewProduct?prodref="+sendId;
 	     
 	      
 
@@ -1007,9 +1015,6 @@ function open(){
 	      productLink.appendChild(productImage);
 	      
 	      
-	      var productName = document.createElement('p');
-	      productName.textContent = products["products"][i].product_name;
-	      productName.className = 'prodName'+i;
 
 	      var productDescription = document.createElement('p');
 	      productDescription.textContent = products["products"][i].product_description;

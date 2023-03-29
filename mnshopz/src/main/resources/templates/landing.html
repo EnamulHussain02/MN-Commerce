@@ -996,19 +996,20 @@ function open(){
 	      var productDiv = document.createElement('div');
 	      productDiv.className = 'product'+i;
 	      
-	      var productLink = document.createElement('a'); 
-	      productLink.href = products["products"][i].product_htmllink; 
-	     
 	      
+	      var productLink = document.createElement('div'); 
+	      productLink.className="link"+i;
+	      productLink.click=(function(){
+	    	  var modal = document.getElementById('myModal');
+	    	    modal.style.display = 'block';
+	    	  
+	      });
+	     
 
 	      var productImage = document.createElement('img');
 	      productImage.src = products["products"][i].product_image;
 	      productImage.className = 'prodImage'+i;
 	      productLink.appendChild(productImage);
-	      
-	  
-	      var imageElement = document.querySelector('.prodImage'+i);
-	      imageElement.onclick=openModal;
 	     
 	      var productName = document.createElement('p');
 	      productName.textContent = products["products"][i].product_name;
@@ -1052,7 +1053,7 @@ function open(){
 	      productDiv.appendChild(productName);
 	      productDiv.appendChild(productDescription);
 	      productDiv.appendChild(productPrice);
-	     productDiv.appendChild(buyButton);
+	      productDiv.appendChild(buyButton);
 	      productDiv.appendChild(starRating);
 	      
 	      document.body.appendChild(productDiv);

@@ -137,12 +137,9 @@
 	position: absolute;
 	top: 140px;
 	left: 287px;
-	background: transparent no-repeat;
-}
-
-.content-image img {
 	width: 576px;
 	height: 576px;
+	background: transparent no-repeat;
 }
 
 .prodBckwrdBtn {
@@ -208,27 +205,23 @@
 	opacity: 1;
 }
 
-.bi-arrow-right {
+#arrowleft {
 	width: 25px;
 	height: 25px;
 	color: white;
 }
 
-.bi-arrow-left {
+#arrowright {
 	width: 25px;
 	height: 25px;
 	color: black;
 }
-
 .prodTitle {
 	position: absolute;
 	top: 141px;
 	left: 921px;
 	width: 762px;
 	height: 99px;
-}
-
-.prodTitle h1 {
 	font-family: arial;
 	font-size: 28px;
 	letter-spacing: 0px;
@@ -236,71 +229,37 @@
 	font-weight: bold;
 	opacity: 1;
 }
-
 .prodColor {
 	position: absolute;
 	top: 320px;
 	left: 921px;
 	height: 30px;
+	font-weight: bold;
 	font-size: 18px;
 	font-family: arial;
 	letter-spacing: 0px;
 	text-align: left;
 }
-
 .prodCircle1 {
 	position: absolute;
 	top: 316px;
 	left: 998px;
 	width: 31px;
 	height: 31px;
-	background: #FCB437;
+	background: #2C2C2C;;
 	border: none;
 	border-radius: 50px;
 }
-
-.prodCircle2 {
-	position: absolute;
-	top: 316px;
-	left: 1059px;
-	width: 31px;
-	height: 31px;
-	background: #03433B;
-	border: none;
-	border-radius: 50px;
-}
-
-.prodCircle3 {
-	position: absolute;
-	top: 316px;
-	left: 1121px;
-	width: 31px;
-	height: 31px;
-	background: #5895B3;
-	border: none;
-	border-radius: 50px;
-}
-
-.prodCircle4 {
-	position: absolute;
-	top: 316px;
-	left: 1182px;
-	width: 31px;
-	height: 31px;
-	background: #F8D6CD;
-	border: none;
-	border-radius: 50px;
-}
-
 .prodPrice {
 	position: absolute;
-	top: 374px;
+	top: 378px;
 	left: 921px;
 	width: 57px;
 	height: 26px;
 	color: #2C2C2C;
 	font-size: 18px;
 	font-family: arial;
+	font-weight: bold;
 	letter-spacing: 0px;
 	text-align: left;
 }
@@ -327,6 +286,7 @@
 	height: 23px;
 	font-size: 18px;
 	font-family: arial;
+	font-weight: bold;
 	letter-spacing: 0px;
 	color: #2C2C2C;
 	opacity: 1;
@@ -338,7 +298,7 @@
 	left: 921px;
 	width: 11px;
 	height: 11px;
-	background: #03433B;
+	background:#2C2C2C;
 	border: none;
 	border-radius: 50px;
 }
@@ -349,7 +309,7 @@
 	left: 921px;
 	width: 11px;
 	height: 11px;
-	background: #03433B;
+	background:#2C2C2C;
 	border: none;
 	border-radius: 50px;
 }
@@ -360,7 +320,7 @@
 	left: 921px;
 	width: 11px;
 	height: 11px;
-	background: #03433B;
+	background:#2C2C2C;
 	border: none;
 	border-radius: 50px;
 }
@@ -371,7 +331,7 @@
 	left: 921px;
 	width: 11px;
 	height: 11px;
-	background: #03433B;
+	background:#2C2C2C;
 	border: none;
 	border-radius: 50px;
 }
@@ -595,10 +555,8 @@
 	top: 254px;
 	left: 921px;
 	width:150px;
-	cursor: pointer;
-}
-.material-icons {
 	color:#F26F20;
+	cursor: pointer;
 	font-size: 30px;
 }
 .modal-content{
@@ -666,23 +624,118 @@
 </style>
 <script>
 function open(){
-	
+	const UrlParam = new URLSearchParams(window.location.search);
+	var prodid = UrlParam.get('prodref');
+	var data={
+			"prodId":prodid
+	}
 	$.ajax({
 	    type : "POST",
 	    headers : {
 	      'Content-Type' : 'application/json'
 	    },
 	    crossDomain : true,
-	    url : "/home/products",
+	    url : "/home/sendProduct",
+	    data : JSON.stringify(data),
+	    dataType : 'json',
 	    success : function(data) {
-	    var products=JSON.parse(data);
-	    for (var i = 0; i <1; i++) {
+	   	var products=data;
+	   	
+	   	var image=document.createElement('img');
+	   	image.src=products["product"][0].product_image;
+	   	image.className='content-image';
+	   	
+	   	var button1=document.createElement('button');
+	   	button1.className='prodfrwdBtn';
+	   	
+	   	var icon1=document.createElement('i');
+	   	icon1.className='material-icons';
+	   	icon1.innerText='arrow_back';
+	   	icon1.setAttribute("id","arrowright");
+	   	button1.appendChild(icon1);
+	   	
+	   	var prodimage1=document.createElement('img')
+	   	prodimage1.src=products["product"][0].image1;
+	   	prodimage1.className='prodimg1';
+	   	
+	   	var prodimage2=document.createElement('img');
+	   	prodimage2.src=products["product"][0].image2;
+	   	prodimage2.className='prodimg2';
+	   	
+	   	var prodimage3=document.createElement('img');
+	   	prodimage3.src=products["product"][0].image3;
+	   	prodimage3.className='prodimg3';
+	   	
+	   	var prodimage4=document.createElement('img');
+	   	prodimage4.src=products["product"][0].image4;
+	   	prodimage4.className='prodimg4';
+	   	
+	   	var button2=document.createElement('button');
+	   	button2.className='prodBckwrdBtn';
+	   	
+	   	var icon2=document.createElement('i');
+	   	icon2.className='material-icons';
+	   	icon2.innerText='arrow_forward';
+	   	icon2.setAttribute("id","arrowleft");
+	   	button2.appendChild(icon2);
+	   	
+	   	var prodTitle=document.createElement('p');
+	   	prodTitle.innerText=products["product"][0].prodTitel;
+	   	prodTitle.className='prodTitle';
+	   	
+	   	var colortext=document.createElement('p');
+	   	colortext.textContent='Color:';
+	   	colortext.className='prodColor';
+	   	
+	   	var colorCircle=document.createElement('button');
+	   	colorCircle.className='prodCircle1';
+	   	
+	   	var priceText=document.createElement('p');
+	   	priceText.innerText='Price:';
+	   	priceText.className='prodPrice';
+	   	
+	   	var prodPrice=document.createElement('p');
+	   	prodPrice.innerText=products["product"][0].product_price;
+	   	prodPrice.className='prodCost';
+	   	
+	   	 var description=document.createElement('p');
+	   	 description.innerText='Description';
+	   	 description.className='prodDescTitel';
+	   	 
+	   	 var descCircle1=document.createElement('button');
+	   	descCircle1.className='prodDescCircle1';
+	   	
+	   	var descCircle2=document.createElement('button');
+	   	descCircle2.className='prodDescCircle2';
+	   	
+	   	var descCircle3=document.createElement('button');
+	   	descCircle3.className='prodDescCircle3';
+	   	
+	   	var descCircle4=document.createElement('button');
+	   	descCircle4.className='prodDescCircle4';
+	   	
+	   	var prodDesc1=document.createElement('p');
+	   	prodDesc1.innerText=products["product"][0].prodDesc1;
+	   	prodDesc1.className='prodDesc1';
+	   	
+	   	var prodDesc2=document.createElement('p');
+	   	prodDesc2.innerText=products["product"][0].prodDesc2;
+	   	prodDesc2.className='prodDesc2';
+	   	
+	   	var prodDesc3=document.createElement('p');
+	   	prodDesc3.innerText=products["product"][0].prodDesc3;
+	   	prodDesc3.className='prodDesc3';
+	   	
+	   	var prodDesc4=document.createElement('p');
+	   	prodDesc4.innerText=products["product"][0].prodDesc4;
+	   	prodDesc4.className='prodDesc4';
+	    var starRating = document.createElement('div');
+	    for (var i = 0; i <products["product"].length; i++) {
 	    	
-	      var starRating = document.createElement('div');
 	      starRating.className = 'starRating';
 	      
-	      var fullStars = Math.floor(products["products"][0].product_starratting);
-	      var halfStars = Math.round((products["products"][0].product_starratting - fullStars) * 2);
+	      var fullStars = Math.floor(products["product"][0].product_starratting);
+	      var halfStars = Math.round((products["product"][0].product_starratting - fullStars) * 2);
 	      
 	      for (var j = 0; j < fullStars; j++) {
 	        var star = document.createElement('i');
@@ -695,11 +748,34 @@ function open(){
 	        var emptyStar = document.createElement('i');
 	        emptyStar.className = 'material-icons';
 	        emptyStar.textContent = 'star_border';
+	        emptyStar.setAttribute=("id","starIcon");
 	        starRating.appendChild(emptyStar);
 	      }
+	    }
+	      document.body.appendChild(image);
+	      document.body.appendChild(button1);
+	      document.body.appendChild(prodimage1);
+	      document.body.appendChild(prodimage2);
+	      document.body.appendChild(prodimage3);
+	      document.body.appendChild(prodimage4);
+	      document.body.appendChild(button2);
+	      document.body.appendChild(prodTitle);
+	      document.body.appendChild(colortext);
+	      document.body.appendChild(colorCircle);
+	      document.body.appendChild(prodPrice);	      
+	      document.body.appendChild(priceText);
+	      document.body.appendChild(description);	      
+	      document.body.appendChild(descCircle1);
+	      document.body.appendChild(descCircle2);
+	      document.body.appendChild(descCircle3);
+	      document.body.appendChild(descCircle4);
+	      document.body.appendChild(prodDesc1);
+	      document.body.appendChild(prodDesc2);
+	      document.body.appendChild(prodDesc3);
+	      document.body.appendChild(prodDesc4);
 	      document.body.appendChild(starRating);
 	      
-	    }
+	  
 	    },
 	    error : function() {
 	    }
@@ -746,7 +822,7 @@ function toggleInput() {
 
 			<i class="bi bi-person-circle"></i>
 		</div>
-		<div class="content-image">
+		<!-- <div class="content-image">
 			<a href=""> <img
 				src="https://m.media-amazon.com/images/I/71gvgMp9ITL._SX679_.jpg">
 			</a>
@@ -766,8 +842,7 @@ function toggleInput() {
 			<i class="bi bi-arrow-left"></i>
 		</button>
 		<div class="prodTitle">
-			<h1>HP Victus Gaming Latest AMD Ryzen 5 5600H Processor 16.1
-				inch(40.9 cm) FHD Gaming Laptop (8GB AM/512GB SSD/4GB</h1>
+			<h1>HP Victus Gaming Latest AMD Ryzen 5 5600H Processor 16.1 inch(40.9 cm) FHD Gaming Laptop (8GB AM/512GB SSD/4GB</h1>
 		</div>
 		<p class="prodColor">
 			<b>Color: </b>
@@ -780,7 +855,7 @@ function toggleInput() {
 			<b>Price:</b>
 		</p>
 		<p class="prodCost">
-			<b><i class="bi bi-currency-rupee">55990</i></b>
+			<b><i class="bi bi-currency-rupee">₹55990</i></b>
 		</p>
 		<h6 class="prodDescTitel">
 			<b>Description</b>
@@ -790,29 +865,17 @@ function toggleInput() {
 		<button id="black" class="prodDescCircle3"></button>
 		<button id="black" class="prodDescCircle4"></button>
 		<div class="prodDesc1">
-			<h6>BUILT FOR PLAY – The Victus by HP 16.1 inch Gaming Laptop PC
-				has what you need to play: a powerful AMD processor and Radeon
-				graphics, an upgraded cooling system, a high-resolution, fast
-				display, and OMEN Gaming Hub.</h6>
+			<h6>BUILT FOR PLAY – The Victus by HP 16.1 inch Gaming Laptop PC has what you need to play: a powerful AMD processor and Radeon graphics, an upgraded cooling system, a high-resolution, fast display, and OMEN Gaming Hub.</h6>
 		</div>
 		<div class="prodDesc2">
-			<h6>NEXT-GEN GRAPHICS – Experience incredible visuals to elevate
-				all of your gameplay with an AMD Radeon RX 5500M graphics card
-				that’s equipped with 4 GB of GDDR6 dedicated memory and PCI Express
-				4.0 support for speedier data-transfers.</h6>
+			<h6>NEXT-GEN GRAPHICS – Experience incredible visuals to elevate all of your gameplay with an AMD Radeon RX 5500M graphics card that’s equipped with 4 GB of GDDR6 dedicated memory and PCI Express 4.0 support for speedier data-transfers.</h6>
 		</div>
 		<div class="prodDesc3">
-			<h6>IMMERSIVE DISPLAY – Enjoy vibrant, crystal-clear images with
-				178-degree wide-viewing angles on this FHD (1920 x 1080) IPS,
-				micro-edge display; plus, this screen’s non-reflective and low-gloss
-				design means you’ll get less glare while outside in the sun or under
-				bright lights.</h6>
+			<h6>IMMERSIVE DISPLAY – Enjoy vibrant, crystal-clear images with 178-degree wide-viewing angles on this FHD (1920 x 1080) IPS, micro-edge display; plus, this screen’s non-reflective and low-gloss design means you’ll get less glare while outside in the sun or under bright lights.</h6>
 		</div>
 		<div class="prodDesc4">
-			<h6>UNCOMPROMISING PERFORMANCE – This thin and light laptop
-				lacks nothing in power, packing the speedy 6-core AMD Ryzen 5 5600H
-				mobile processor and up to 4.2 GHz max boost clock.</h6>
-		</div>
+			<h6>UNCOMPROMISING PERFORMANCE – This thin and light laptop lacks nothing in power, packing the speedy 6-core AMD Ryzen 5 5600H mobile processor and up to 4.2 GHz max boost clock.</h6>
+		</div> -->
 		<button class="prodCart">Add to Cart</button>
 		<button class="prodBuy" data-bs-toggle="modal" data-bs-target="#buyModal">Buy Now</button>
 		<div class="modal" id="buyModal" tabindex="-1"
