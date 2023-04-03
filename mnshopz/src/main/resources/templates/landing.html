@@ -995,6 +995,27 @@ function open(){
 	    
 	      var productDiv = document.createElement('div');
 	      productDiv.className = 'product'+i;
+	      productDiv.addEventListener("click",function(){
+	    	  
+	    	  var modal = 
+	  			document.createElement('div');
+	  		modal.classList.add('modal', 'fade');
+	  		modal.setAttribute('tabindex', '-1');
+	  		modal.setAttribute('aria-labelledby', 'exampleModalLabel');
+	  		modal.setAttribute('aria-hidden', 'true');
+	  		modal.innerHTML = `
+	     	<div class="modal-dialog">
+	     		<div class="modal-content">
+	     			<div class="modal-body">
+	     				<h3 class="modalHeading">You are not Logged In please Login to Continue</h3>
+	  				<button type="button" id="modal-cancel-btn"	class="btn btn-secondary" data-bs-dismiss="modal">Close</button>			
+	  	   		</div>
+	     		</div>
+	     	</div>`;
+	  		document.body.appendChild(modal);
+	  		var secondModalInstance = new bootstrap.Modal(modal);
+	  		secondModalInstance.show();
+	      });
 	      
 	      
 	      var productLink = document.createElement('div'); 
@@ -1017,10 +1038,10 @@ function open(){
 
 	      var productDescription = document.createElement('p');
 	      productDescription.textContent = products["products"][i].product_description;
-	      productDescription.className = 'prodDesc'+i;
+	      productDescription.className = 'prodDesc'+i;	    
 
 	      var productPrice = document.createElement('p');
-	      productPrice.textContent = `${products["products"][i].product_price}`;
+	      productPrice.textContent ='₹'+products["products"][i].product_price;
 	      productPrice.className = 'prodPrice'+i;
 	      
 	      var buyButton = document.createElement('button');
@@ -1071,6 +1092,30 @@ function openModal() {
       
     modal.style.display = 'block';
     }
+    
+function alert() {
+		console.log('Buy button clicked');
+		debugger;
+		var modal = 
+			document.createElement('div');
+		modal.classList.add('modal', 'fade');
+		modal.setAttribute('tabindex', '-1');
+		modal.setAttribute('aria-labelledby', 'exampleModalLabel');
+		modal.setAttribute('aria-hidden', 'true');
+		modal.innerHTML = `
+   	<div class="modal-dialog">
+   		<div class="modal-content">
+   			<div class="modal-body">
+   				<h3 class="modalHeading">You are not Logged In please Login</h3>
+				<button type="button" id="modal-cancel-btn"	class="btn btn-secondary" data-bs-dismiss="modal">Close</button>			
+	   		</div>
+   		</div>
+   	</div>`;
+		document.body.appendChild(modal);
+		var secondModalInstance = new bootstrap.Modal(modal);
+		secondModalInstance.show();
+		
+}
 
 </script>
 
@@ -1093,10 +1138,12 @@ function openModal() {
 				</a>
 			</div>
 			<div class="headerIcon3">
-				<a href="">
-					<button id="button3">Order History</button>
-				</a>
+				
+					<button id="button3" onclick="alert()">Order History</button>
+				
 			</div>
+			
+			
 			<div class="headerIcon4">
 				<a href="http://localhost:8080/home/addProduct">
 					<button id="button4">Add New</button>

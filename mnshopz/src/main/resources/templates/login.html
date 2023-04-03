@@ -25,6 +25,16 @@
 
 
 <style type="text/css">
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus{
+	outline: none;
+}
 .content {
 	top: 0px;
 	left: 0px;
@@ -345,14 +355,13 @@
 <script type="text/javascript">
 
 	function loginDetails(){
+		
 		var number=document.getElementById('numberField').value;
 		var password=document.getElementById('passwordField').value;
-		debugger;
 		var data={
 				"cnumber": number,
 				"cpassword": password
 		};
-		
 		$.ajax({
 			url : '/home/userLogin',
 			headers: {
@@ -363,18 +372,23 @@
 			data : JSON.stringify(data),
 			dataType : 'json',
 			success : function(response){
-				var receivedData=response;
-				if(receivedData.status=="201"){
+				
+				var num=response.mobilenumber;
+				var type=response.type;
+				console.log(num);
+				debugger;
+				
+				if(response.status=="300"){
+					
 					alert("Your Mobile number or password is Incorrect please check it or you are not an registred user register to log in");
-					window.location.href="http://localhost:8080/home/landing";
+					window.location.href="http://localhost:8080/home/login";
 				}
 				else{
-					window.location.href="http://localhost:8080/home/landing";
+					window.location.href="http://localhost:8080/home/logLanding?mobilenumber="+num+ "&type="+ type;
 				}
 					
 			}
 		});
-		
 	}
 </script>
 
@@ -416,7 +430,6 @@
 			<div class="leftText">
 				<b>Login</b>
 			</div>
-			
 				<p id="number">
 					<b>Mobile Number</b>
 				</p>
@@ -427,6 +440,7 @@
 				<input type="password" id="passwordField" required> 
 				<a href="http://localhost:8080/home/logLanding">
 				<input type="submit" id="login" value="Login" onclick="loginDetails()"></a>
+				
 			<div class="leftTxt2">
 				<b>I don’t have an account!</b> <a
 					href="http://localhost:8080/home/registration"> Register </a>

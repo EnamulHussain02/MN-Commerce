@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.example.mnshopz.repository.CustomerRepository;
 
@@ -17,8 +18,6 @@ public class CustomerService
 	@Autowired
 	CustomerRepository customerRepository;
 	
-	
-	
 	private static final Logger logger=LoggerFactory.getLogger(CustomerService.class);
 	
 	public Map<String,Object> setUsers(Map<String,Object> users){
@@ -26,6 +25,7 @@ public class CustomerService
 		String num=(String) users.get("cnumber");
 		String password=(String) users.get("cpassword");
 		String address =(String) users.get("cadderss");
+		String type=(String) users.get("c_type");
 
 		 long number=Long.parseLong(num);
 		List<Map<String, Object>> result= customerRepository.checkCustomer(number);
@@ -34,7 +34,7 @@ public class CustomerService
 		logger.info("check"+ result);
 		if(result.isEmpty())
 		{
-			customerRepository.setCustomer(address, name, number, password);
+			customerRepository.setCustomer(address, name, number, password,type);
 			userInfo.put("Details", result);
 		}
 		else {
@@ -48,17 +48,20 @@ public class CustomerService
 		String num=(String) userLogin.get("cnumber");
 		String password=(String) userLogin.get("cpassword");
 		
-		logger.info(num);
-		
-		long number =Long.parseLong(num);
-		List<Map<String, Object>> userData = customerRepository.verifyUser(number,password);
+		Long number =Long.parseLong(num);
+		logger.info("check"+number);
+		Map<String, Object> userData = customerRepository.verifyUser(number,password);
 		Map<String,Object> result=new HashMap<>();
-		if(result.isEmpty()) {
-			result.put("UserDetails", userData);
+		if(userData.isEmpty()) {
+			
+			result.put("status", "300");
 		}
-		else {
-			result.put("UserDetails", "201");
+		else {					
+			result.put("mobilenumber",userData.get("c_number"));
+			result.put("type",userData.get("c_type"));
+			
 		}
+		logger.info("check"+result);
 		return result;
 	}
 }

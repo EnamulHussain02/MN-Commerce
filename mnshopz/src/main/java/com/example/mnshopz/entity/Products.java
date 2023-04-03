@@ -53,16 +53,16 @@ public class Products {
 	@Column(name="product_discount")
 	private double product_discount;
 	
-	@Column(name="prodDesc1")
+	@Column(name="prod_desc1")
 	private String prodDesc1;
 	
-	@Column(name="prodDesc2")
+	@Column(name="prod_desc2")
 	private String prodDesc2;
 	
-	@Column(name="prodDesc3")
+	@Column(name="prod_desc3")
 	private String prodDesc3;
 	
-	@Column(name="prodDesc4")
+	@Column(name="prod_desc4")
 	private String prodDesc4;
 	
 	@Column(name="image1")
@@ -246,22 +246,5 @@ public class Products {
 
 	public void setProduct_discount(double product_discount) {
 		this.product_discount = product_discount;
-	}
-
-	/*
-	 * @Override public String toString() { return "Products [product_Id=" +
-	 * product_Id + ", product_Name=" + product_Name + ", product_Description=" +
-	 * product_Description + ", product_Price=" + product_Price +
-	 * ", product_Status=" + product_Status + ", product_Barcode=" + product_Barcode
-	 * + ", product_Quantity=" + product_Quantity + ", product_image=" +
-	 * product_image + ", product_starratting=" + product_starratting +
-	 * ", product_color=" + product_color + ", product_type=" + product_type +
-	 * ", product_discount=" + product_discount + ", prodDesc1=" + prodDesc1 +
-	 * ", prodDesc2=" + prodDesc2 + ", prodDesc3=" + prodDesc3 + ", prodDesc4=" +
-	 * prodDesc4 + ", image1=" + image1 + ", image2=" + image2 + ", image3=" +
-	 * image3 + ", image4=" + image4 + ", prodTitel=" + prodTitel + "]"; }
-	 */
-	
-	
-	
+	}	
 }

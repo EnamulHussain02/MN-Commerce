@@ -33,6 +33,25 @@ public class Customer {
 	
 	@Column(name="c_password")
 	private String c_password;
+	
+	@Column(name="c_type")
+	private String c_type;
+
+	public String getC_password() {
+		return c_password;
+	}
+
+	public void setC_password(String c_password) {
+		this.c_password = c_password;
+	}
+
+	public String getC_type() {
+		return c_type;
+	}
+
+	public void setC_type(String c_type) {
+		this.c_type = c_type;
+	}
 
 	public Long getC_id() {
 		return c_id;
@@ -66,13 +85,7 @@ public class Customer {
 		this.c_number = c_number;
 	}
 
-	public String getC_passowrd() {
-		return c_password;
-	}
-
-	public void setC_passowrd(String c_passwowrd) {
-		this.c_password = c_password;
-	}
+	
 	
 	
 }

@@ -53,7 +53,7 @@
 	z-index: 30;
 }
 
-#image1 {
+.image1 {
 	position: absolute;
 	top: 29px;
 	width: 184px;
@@ -71,7 +71,7 @@
 .headerIcon1 {
 	position: absolute;
 	top: 39px;
-	left: 892px;
+	left: 1049px;
 	width: 52px;
 	height: 22px;
 }
@@ -79,7 +79,7 @@
 .headerIcon2 {
 	position: absolute;
 	top: 39px;
-	left: 1017px;
+	left: 1174px;
 	width: 79px;
 	height: 22px;
 }
@@ -87,28 +87,24 @@
 .headerIcon3 {
 	position: absolute;
 	top: 39px;
-	left: 1169px;
-	width: 119px;
+	left: 1326px;
+	width: 131px;
 	height: 22px;
 }
 
 .headerIcon4 {
 	position: absolute;
 	top: 39px;
-	left: 1360px;
-	width: 87px;
+	left: 1517px;
+	width: 95px;
 	height: 22px;
 }
 
-.headerIcon5 {
+.bi-person-circle {
 	position: absolute;
-	top: 25px;
-	left: 1496px;
-	right: 223px;
-	width: 201px;
-	height: 50px;
-	border: none;
-	border: 25px;
+	top: 30px;
+	left: 1677px;
+	font-size: 35px;
 }
 
 #button1 {
@@ -141,18 +137,6 @@
 	font-size: 20px;
 	font-family: Arial;
 	color: #2C2C2C;
-}
-
-#button5 {
-	border-radius: 25px;
-	background-color: #03433B;
-	left: 1532px;
-	top: 39px;
-	width: 201px;
-	height: 50px;
-	font-size: 20px;
-	font-family: Arial;
-	color: #FFFFFF;
 }
 
 .content1 {
@@ -972,6 +956,74 @@
 	border-radius: 20px;
 	opacity: 1;
 }
+
+.product10 {
+	position: absolute;
+	top: 1547px;
+	left: 1436px;
+	width: 261px;
+	height: 456px;
+}
+
+.prodImage10 {
+	position: absolute;
+	width: 261px;
+	height: 310px;
+}
+
+.prodName10 {
+	position: absolute;
+	top: 324px;
+	width: 256px;
+	height: 17px;
+	text-align: left;
+	font-family: arial;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+}
+
+.prodDesc10 {
+	position: absolute;
+	top: 355px;
+	width: 261px;
+	height: 12px;
+	text-align: left;
+	font-family: arial;
+	font-size: 16px;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+}
+
+.prodPrice10 {
+	position: absolute;
+	top: 421px;
+	left: 180px;
+	width: 100px;
+	height: 29px;
+	text-align: left;
+	font-family: arial;
+	font-size: 25px;
+	letter-spacing: 0px;
+	color: #03433B;
+	opacity: 1;
+}
+
+.prodBtn10 {
+	position: absolute;
+	top: 416px;
+	width: 137px;
+	height: 40px;
+	font-family: arial;
+	font-size: 16px;
+	color: #FFFFFF;
+	background: #03433B 0% 0% no-repeat padding-box;
+	border-radius: 20px;
+	opacity: 1;
+}
 .starRating{
 	position: absolute;
 	top: 383px;
@@ -980,6 +1032,12 @@
 </style>
 <script type="text/javascript">
 function open(){
+	debugger;
+
+	const UrlParam = new URLSearchParams(window.location.search);
+	var cusNumber = UrlParam.get('mobilenumber');
+	var type=UrlParam.get('type');
+	console.log(cusNumber);
 	
 	$.ajax({
 	    type : "POST",
@@ -989,8 +1047,126 @@ function open(){
 	    crossDomain : true,
 	    url : "/home/products",
 	    success : function(data) {
+	    	var number1=data.cusNumber;
+	    	console.log(number1);
 	    var products=JSON.parse(data);
 	    console.log(products["products"]);
+	    
+	    var usertype=type;
+	    if(usertype=="Seller"){ 
+	    	var headerDiv = document.createElement('div');
+	    headerDiv.className = 'header1';
+	    
+	    var redirect=document.createElement('a');	    
+	    redirect.href='http://localhost:8080/home/landing';
+	    
+	    var logo=document.createElement('img');
+	    logo.className='image1';
+	    logo.src='https://storage.googleapis.com/smco-web-static-assets/TraineeProject/MnShopz-Logo.jpg';
+	    redirect.appendChild(logo);
+	    
+	    var abtRedirect=document.createElement('a');
+	    
+	    var headerIcon1=document.createElement('button');
+	    headerIcon1.className='headerIcon1';
+	    headerIcon1.setAttribute("id","button1");
+	    headerIcon1.textContent = 'About';
+	    abtRedirect.appendChild(headerIcon1);
+	    
+	    var prodRedirect=document.createElement('a');
+	    prodRedirect.href="http://localhost:8080/home/logLanding?mobilenumber="+cusNumber;
+	    
+	    var headerIcon2=document.createElement('button');
+	    headerIcon2.className='headerIcon2';
+	    headerIcon2.setAttribute("id","button2");
+		headerIcon2.textContent='Products';
+		prodRedirect.appendChild(headerIcon2);
+		
+		var orderRedirect=document.createElement('a');
+		orderRedirect.href="http://localhost:8080/home/viewOrder?mobilenumber="+ cusNumber;
+	    
+	    var headerIcon3=document.createElement('button');
+	    headerIcon3.className='headerIcon3';
+	    headerIcon3.setAttribute("id","button3");
+		headerIcon3.textContent='Order History';
+		orderRedirect.appendChild(headerIcon3);
+		
+		var addProd=document.createElement('a');
+		addProd.href="http://localhost:8080/home/addProduct?mobilenumber="+ cusNumber;
+		
+		var headerIcon4=document.createElement('button');
+		headerIcon4.className='headerIcon4';
+	    headerIcon4.setAttribute("id","button4");
+		headerIcon4.textContent='Add New';
+		addProd.appendChild(headerIcon4);
+		
+		var icon =document.createElement('i');
+		icon.className="bi "+"bi-person-circle";
+		
+		headerDiv.appendChild(redirect);
+		headerDiv.appendChild(abtRedirect);
+		headerDiv.appendChild(prodRedirect);
+		headerDiv.appendChild(orderRedirect);
+		headerDiv.appendChild(addProd);
+		headerDiv.appendChild(icon);
+
+	    document.body.appendChild(headerDiv);
+	    	
+	    }
+	    else{
+	    	
+	    	 var headerDiv = document.createElement('div');
+	 	    headerDiv.className = 'header1';
+	 	    
+	 	    var redirect=document.createElement('a');	    
+	 	    redirect.href='http://localhost:8080/home/landing';
+	 	    
+	 	    var logo=document.createElement('img');
+	 	    logo.className='image1';
+	 	    logo.src='https://storage.googleapis.com/smco-web-static-assets/TraineeProject/MnShopz-Logo.jpg';
+	 	    redirect.appendChild(logo);
+	 	    
+	 	    var abtRedirect=document.createElement('a');
+	 	    
+	 	    var headerIcon1=document.createElement('button');
+	 	    headerIcon1.className='headerIcon1';
+	 	    headerIcon1.setAttribute("id","button1");
+	 	    headerIcon1.setAttribute('style','left:1174px');
+	 	    headerIcon1.textContent = 'About';
+	 	    abtRedirect.appendChild(headerIcon1);
+	 	    
+	 	    var prodRedirect=document.createElement('a');
+	 	    prodRedirect.href="http://localhost:8080/home/logLanding?mobilenumber="+cusNumber;
+	 	    
+	 	    var headerIcon2=document.createElement('button');
+	 	    headerIcon2.className='headerIcon2';
+	 	    headerIcon2.setAttribute("id","button2");
+	 	    headerIcon2.setAttribute('style','left:1326px');
+	 		headerIcon2.textContent='Products';
+	 		prodRedirect.appendChild(headerIcon2);
+	 		
+	 		var orderRedirect=document.createElement('a');
+	 		orderRedirect.href="http://localhost:8080/home/viewOrder?mobilenumber="+ cusNumber;
+	 	    
+	 	    var headerIcon3=document.createElement('button');
+	 	    headerIcon3.className='headerIcon3';
+	 	    headerIcon3.setAttribute("id","button3");
+	 	    headerIcon3.setAttribute('style','left:1477px');
+	 		headerIcon3.textContent='Order History';
+	 		orderRedirect.appendChild(headerIcon3);
+	 			 		
+	 		var icon =document.createElement('i');
+	 		icon.className="bi "+"bi-person-circle";
+	 		
+	 		headerDiv.appendChild(redirect);
+	 		headerDiv.appendChild(abtRedirect);
+	 		headerDiv.appendChild(prodRedirect);
+	 		headerDiv.appendChild(orderRedirect);
+	 		headerDiv.appendChild(icon);
+
+	 	    document.body.appendChild(headerDiv);
+	    }	   
+	    
 	    for (var i = 0; i < products["products"].length; i++) {
 	    
 	      var productDiv = document.createElement('div');
@@ -1005,7 +1181,7 @@ function open(){
 	      
 	      
 	      var productLink = document.createElement('a'); 
-	      productLink.href = "http://localhost:8080/home/viewProduct?prodref="+sendId;
+	      productLink.href = "http://localhost:8080/home/viewProduct?prodref="+sendId + "&mobilenumber="+ cusNumber;
 	     
 	      
 
@@ -1021,7 +1197,7 @@ function open(){
 	      productDescription.className = 'prodDesc'+i;
 
 	      var productPrice = document.createElement('p');
-	      productPrice.textContent = `${products["products"][i].product_price}`;
+	      productPrice.textContent = '₹'+products["products"][i].product_price;
 	      productPrice.className = 'prodPrice'+i;
 	      
 	      var buyButton = document.createElement('button');
@@ -1073,7 +1249,7 @@ function open(){
 </head>
 <body onload="open()">
 	<div class="container1">
-		<div class="header1">
+		<!-- <div class="header1">
 			<a href="http://localhost:8080/home/landing">
 				<img id="image1"
 					src="https://storage.googleapis.com/smco-web-static-assets/TraineeProject/MnShopz-Logo.jpg">
@@ -1083,7 +1259,7 @@ function open(){
 					<button id="button1">About</button>
 			</div>
 			<div class="headerIcon2">
-				<a href="http://localhost:8080/home/landing">
+				<a href="http://localhost:8080/home/logLanding?mobilenumber="+num>
 					<button id="button2">Products</button>
 				</a>
 			</div>
@@ -1097,12 +1273,8 @@ function open(){
 					<button id="button4">Add New</button>
 				</a>
 			</div>
-			<div class="headerIcon5">
-				<a href="http://localhost:8080/home/registration">
-					<button id="button5" onclick=openRegister()>Register/Login</button>
-				</a>
-			</div>
-		</div>
+			<i class="bi bi-person-circle"></i>
+		</div> -->
 
 		<div class="content1 ">
 			<div class="content1Text">
