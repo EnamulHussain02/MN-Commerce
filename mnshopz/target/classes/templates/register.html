@@ -28,6 +28,17 @@
 	margin: 0px;
 	padding: 0px;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input:focus{
+outline:none;
+}
+select:focus{
+outline:none;
+}
 
 .content {
 	top: 0px;
@@ -326,13 +337,34 @@
 	top: 408px;
 	left: 134px;
 	width: 451px;
-	height: 126px;
+	height: 50px;
 	background: #FFFFFF;
 	border: 0.5px solid;
 	border-color: #03433B;
 	opacity: 1;
 }
-
+#typeTxt {
+	position: absolute;
+	top: 474px;
+	left: 134px;
+	font-family: Arial;
+	font-size: 16px;
+	color: #03433B;
+	text-align: left;
+	letter-spacing: 0px;
+	opacity: 1;
+}
+.userType{
+	position: absolute;
+	top: 501px;
+	left: 134px;
+	width: 451px;
+	height: 50px;
+	background: #FFFFFF;
+	border: 0.5px solid;
+	border-color: #03433B;
+	opacity: 1;
+}
 .registerBtn {
 	position: absolute;
 	top: 564px;
@@ -373,12 +405,14 @@
 		var number = document.getElementById('number').value;
 		var password = document.getElementById('password').value;
 		var address = document.getElementById('address').value;
+		var type = document.getElementById('type').value;
 
 		var data = {
 			"cname" : name,
 			"cnumber" : number,
 			"cpassword" : password,
-			"caddress" : address
+			"caddress" : address,
+			"c_type":type
 		};
 
 		console.log(data);
@@ -394,12 +428,12 @@
 			success : function(response) {
 				var data=response;
 				if(data.status=="201"){
-					alert("You Mobile Number successfully Registred");
-					window.location.href = "http://localhost:8080/home/landing?";
+					alert("You are an Registred user please Login kindly");
+					window.location.href = "http://localhost:8080/home/login?";
 				}
 				else{
-					alert("You are an Registred user please Login kindly")
-					window.location.href = "http://localhost:8080/home/login?";
+					alert("Your Mobile Number is successfully Registred")
+					window.location.href = "http://localhost:8080/home/logLanding?mobilenumber"+number;
 				}
 			}
 		});
@@ -434,7 +468,7 @@
 				</a>
 			</div>
 			<div class="headerIcon5">
-				<a href="http://localhost:8080/home/registration">
+				<a href="http://localhost:8080/home/login">
 					<button id="button5">Register/Login</button>
 				</a>
 			</div>
@@ -483,6 +517,15 @@
 					<b>Address</b>
 				</p>
 				<input type="text" id="address" name="c_address" required> 
+				
+				<p id="typeTxt">
+					<b>Type</b>
+				</p>
+				<select id="type" class="userType" >
+					<option id="option1" value="User">User</option>
+					<option id="option2" value="Seller">Seller</option>
+				</select>
+				
 				<input
 					type="submit" class="registerBtn" onclick="collect()"
 					value="Register">
